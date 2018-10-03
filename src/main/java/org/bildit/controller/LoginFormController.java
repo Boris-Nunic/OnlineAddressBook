@@ -26,7 +26,7 @@ public class LoginFormController extends HttpServlet {
 		HelperClass hc = UserService.login(email, password);
 		
 		if(hc.getMessage() != null) {
-			request.setAttribute("message", hc.getMessage());
+			request.setAttribute("loginMessage", hc.getMessage());
 			request.getRequestDispatcher("loginRegister.jsp").forward(request, response);
 		}
 		

@@ -29,7 +29,7 @@
 			
 			<main>
 			
-				<form>
+				<form action="login" method="post">
 				
 					<fieldset>
 					
@@ -45,7 +45,7 @@
 							
 							<input type="submit" value="Login" />
 							
-							<div class="message"></div>
+							<div class="message"> ${loginMessage} </div>
 							
 					</fieldset>
 				</form>
@@ -71,7 +71,7 @@
 								<input type="password" name="repeatPassword" id="repeatPassword" />
 							</div>
 						<input type="submit" value="Register" />
-						<div class="message">${message}</div>						
+						<div class="message">${registrationMessage}</div>						
 					</fieldset>
 				
 				</form>		

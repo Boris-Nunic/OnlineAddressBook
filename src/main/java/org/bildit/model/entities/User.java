@@ -3,7 +3,7 @@ package org.bildit.model.entities;
 public class User {
 
 	private Integer id;
-	private PersonalInfo peronalInfo = new PersonalInfo();
+	private PersonalInfo personalInfo = new PersonalInfo();
 	private Address address = new Address();
 	private String password;
 	
@@ -24,12 +24,12 @@ public class User {
 		this.id = id;
 	}
 
-	public PersonalInfo getPeronalInfo() {
-		return peronalInfo;
+	public PersonalInfo getPersonalInfo() {
+		return personalInfo;
 	}
 
-	public void setPeronalInfo(PersonalInfo peronalInfo) {
-		this.peronalInfo = peronalInfo;
+	public void setPersonalInfo(PersonalInfo peronalInfo) {
+		this.personalInfo = peronalInfo;
 	}
 
 	public Address getAddress() {

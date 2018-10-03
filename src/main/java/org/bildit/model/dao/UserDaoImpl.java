@@ -22,11 +22,11 @@ public class UserDaoImpl implements UserDaoInterface {
 		try(PreparedStatement ps = connection.prepareStatement(query);) {
 			
 			ps.setString(1, user.getPassword());
-			ps.setString(2, user.getPeronalInfo().getFirstName());
-			ps.setString(3, user.getPeronalInfo().getSurname());
+			ps.setString(2, user.getPersonalInfo().getFirstName());
+			ps.setString(3, user.getPersonalInfo().getSurname());
 			ps.setString(4, user.getAddress().getEmail());
-			ps.setString(5, user.getPeronalInfo().getPhoneNumber());
-			ps.setDate(6, user.getPeronalInfo().getDob());
+			ps.setString(5, user.getPersonalInfo().getPhoneNumber());
+			ps.setDate(6, user.getPersonalInfo().getDob());
 			ps.setString(7, user.getAddress().getStreetAddress());
 			ps.setString(8, user.getAddress().getCity());
 			ps.setString(9, user.getAddress().getCountry());
@@ -51,10 +51,10 @@ public class UserDaoImpl implements UserDaoInterface {
 			while(rs.next()) {
 				user = new User(rs.getString("email"), rs.getString("password"));
 				user.setId(rs.getInt("user_id"));
-				user.getPeronalInfo().setFirstName(rs.getString("first_name"));
-				user.getPeronalInfo().setSurname(rs.getString("surname"));
-				user.getPeronalInfo().setPhoneNumber(rs.getString("phone_number"));
-				user.getPeronalInfo().setDob(rs.getDate("dob"));
+				user.getPersonalInfo().setFirstName(rs.getString("first_name"));
+				user.getPersonalInfo().setSurname(rs.getString("surname"));
+				user.getPersonalInfo().setPhoneNumber(rs.getString("phone_number"));
+				user.getPersonalInfo().setDob(rs.getDate("dob"));
 				user.getAddress().setCity(rs.getString("city"));
 				user.getAddress().setCountry(rs.getString("country"));
 				user.getAddress().setStreetAddress(rs.getString("street_address"));
