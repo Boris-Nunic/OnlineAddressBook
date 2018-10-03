@@ -19,7 +19,7 @@
 				<h1 id="pageTitle">Online Address Book</h1>
 				
 				<nav>
-					<a href="loginRegister.html">Login/Register</a>
+					<a href="loginRegister">Login/Register</a>
 					<a href="aboutUs.html">About us</a>
 				</nav>
 				
