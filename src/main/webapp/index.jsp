@@ -42,7 +42,7 @@
 			<aside>
 				<div class="adverts">
 					<figure class="adverts">
-						<image src="img/bildit.png">
+						<image src="img/bildit.png" />
 						<figcaption hidden="true">Bildit ad</figcaption>
 					</figure>
 				</div>
