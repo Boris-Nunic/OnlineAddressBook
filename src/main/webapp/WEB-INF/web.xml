@@ -10,8 +10,18 @@
   	<description></description>
   	<servlet-class>org.bildit.controller.LoginRegisterController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>RegistrationFormController</servlet-name>
+  	<display-name>RegistrationFormController</display-name>
+  	<description></description>
+  	<servlet-class>org.bildit.controller.RegistrationFormController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginRegisterController</servlet-name>
   	<url-pattern>/loginRegister</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RegistrationFormController</servlet-name>
+  	<url-pattern>/registration</url-pattern>
   </servlet-mapping>
 </web-app>

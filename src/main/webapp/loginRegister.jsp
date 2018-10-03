@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page isELIgnored="false"%>
 
 <html lang="en">
 
@@ -43,11 +44,14 @@
 							</div>
 							
 							<input type="submit" value="Login" />
-
+							
+							<div class="message"></div>
+							
 					</fieldset>
 				</form>
 				
-				<form >
+				<form action="registration" method="post">
+					
 					<fieldset>
 					
 						<legend>Register</legend>
@@ -66,8 +70,8 @@
 								<label for="">Repeat Password:</label>
 								<input type="password" name="repeatPassword" id="repeatPassword" />
 							</div>
-						<input type="submit" value="Register">
-												
+						<input type="submit" value="Register" />
+						<div class="message">${message}</div>						
 					</fieldset>
 				
 				</form>		
