@@ -102,42 +102,7 @@
 					</tr>
 				</table>
 			</div>	
-			<!--	<div id="profileInfo">
-				<div>
-					First Name: <span class="userInfo">Some</span>
-				</div>
-				<div>
-					Middle Name: <span class="userInfo">Randome</span>
-				</div>	
-				<div>
-					Surename: <span class="userInfo">Bloke</span>
-				</div>
-				<div>
-					Date of Birth: <span class="userInfo">1/1/1111</span>
-				</div>
-				<div>
-					E-mail: <span class="userInfo">something@somthing.some</span>
-				</div>
-				<div>
-					Street: <span class="userInfo">Street and Number</span>
-				</div>
-				<div>
-					City: <span class="userInfo">Awsome City</span>
-				</div>
-				<div>
-					Country: <span class="userInfo">Terrific Country</span>
-				</div>	
-				</div> -->
-				
-				
-				
-				<!-- <fieldset id="profileButtons">
-					
-					<input type="button" value="Edit Profile"/>
-					<input type="button" value="Delete Profile" />
-				
-				</fieldset> -->
-				
+							
 			</main>
 		
 			<aside>
