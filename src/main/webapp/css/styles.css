@@ -65,9 +65,6 @@ padding: 10px 10px;
 margin: auto;
 }
 
-#profilePicture{width: 200px;
-height: 200px;}
-
 aside{width: 251px;
 min-height: 600px;
 margin: 0px 0px 0px 5px;
@@ -137,15 +134,31 @@ input[type="date"] {font-size: 100%;}
 
 #profilePictureContainer{float: left;
 width: 200px;
-margin: 10px 10px;}
+margin: 35px 10px 10px 10px;}
+
+#pictureAndInfo{
+	margin-top: 50px;
+}
+
+#profilePicture{width: 200px;
+height: 200px;}
 
 #profileInfo{font-size: 120%;
 padding: 10px 10px;
 margin: 10px 10px;
 }
 
-table{border: 1px solid black;
-border-spacing; 2px;
+.userInfo{
+	color: black;
+}
+
+input[value="Add Profile Image"]{
+	float: left;
+	clear:left;
+}
+#contacts{border: 1px solid black;
+border-spacing: 2px;
+text-align: center;
 }
 
 th{text-transform: uppercase;
@@ -153,6 +166,6 @@ padding: 10px 10px;
 border-bottom: 3px solid black;}
 
 td{padding: 10px 10px 10px 10px;
-text-align: center; }
+/*text-align: center;*/ }
 
 tr.odd{background-color: #3e4c49;}

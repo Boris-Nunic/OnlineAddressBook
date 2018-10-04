@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<%@page isELIgnored="false" %>
+<%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core" %>
 
 <html lang="en">
 
@@ -34,37 +35,101 @@
 		
 			<main>
 			
+			<div id="pictureAndInfo">
 				<figure id="profilePictureContainer">
 					<img id="profilePicture" src="img/profilePrototype.jpg"/>
 					<figcaption hidden="true">Profile Picture</figcaption>
 				</figure>
 				
-				<div id="profileInfo">
+				<input type="button" value="Add Profile Image">
+				
+				<table id="profileInfo">
+					<tr>
+						<td>
+							<span class="fields">First Name:</span>
+						</td>
+						<td>
+							<span class="userInfo"><c:out value="${sessionScope.user.personalInfo.firstName}">Some Random</c:out></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="fields">Surname:</span>
+						</td>
+						<td>
+							<span class="userInfo">Bloke</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="fields">Date of Birth:</span>
+						</td>
+						<td>
+							<span class="userInfo">1/1/1111</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="fields">E-mail:</span>
+						</td>
+						<td>
+							<span class="userInfo"><c:out value="${sessionScope.user.address.email}">something@something@com</c:out></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="fields">Street:</span>
+						</td>
+						<td>
+							<span class="userInfo">Street and Number</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="fields">City:</span>
+						</td>
+						<td>
+							<span class="userInfo">Awsome City</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="fields">Country:</span>
+						</td>
+						<td>
+							<span class="userInfo">Terrific Country</span>
+						</td>
+					</tr>
+				</table>
+			</div>	
+			<!--	<div id="profileInfo">
 				<div>
-					First Name: <span class="userInfo">${user.personalInfo.firstName} </span>
+					First Name: <span class="userInfo">Some</span>
 				</div>
-<!-- 				<div> -->
-<!-- 					Middle Name: <span class="userInfo">Randome</span> -->
-<!-- 				</div>	 -->
 				<div>
-					Surename: <span class="userInfo">${user.personalInfo.surname}</span>
-				</div>
-				<div>
-					Date of Birth: <span class="userInfo">${user.personalInfo.dob}</span>
-				</div>
-				<div>
-					E-mail: <span class="userInfo">${sessionScope.user.address.email}</span>
-				</div>
-				<div>
-					Street: <span class="userInfo">${user.address.streetAddress}</span>
-				</div>
-				<div>
-					City: <span class="userInfo">${user.address.city}</span>
-				</div>
-				<div>
-					Country: <span class="userInfo">${user.address.country}</span>
+					Middle Name: <span class="userInfo">Randome</span>
 				</div>	
+				<div>
+					Surename: <span class="userInfo">Bloke</span>
 				</div>
+				<div>
+					Date of Birth: <span class="userInfo">1/1/1111</span>
+				</div>
+				<div>
+					E-mail: <span class="userInfo">something@somthing.some</span>
+				</div>
+				<div>
+					Street: <span class="userInfo">Street and Number</span>
+				</div>
+				<div>
+					City: <span class="userInfo">Awsome City</span>
+				</div>
+				<div>
+					Country: <span class="userInfo">Terrific Country</span>
+				</div>	
+				</div> -->
+				
+				
 				
 				<!-- <fieldset id="profileButtons">
 					
