@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 
 import org.bildit.model.dao.UserDaoImpl;
-import org.bildit.model.entities.HelperClass;
 import org.bildit.model.entities.User;
 
 public class UserService {
@@ -43,34 +42,32 @@ public class UserService {
 	}
 
 	// Login logic
-	public static HelperClass login(String email, String password) {
+	public static User login(String email, String password) {
 
 		String message = null;
 		String encryptedPassword = null;
-		User user = null;
-		HelperClass hc = new HelperClass();
+		User user = new User();
 		try {
 			encryptedPassword = EncryptionService.encryptPassword(password);
 		} catch (Exception e) {
 			message = "Somthing went wrong. Please try again";
-			hc.setMessage(message);
-			return hc;
+			user.setMessage(message);
+			return user;
 		}
-		try {
-			user = userDao.getUser(email);
-		} catch (NullPointerException e) {
-			message = "Provided e-mail address or password is not valid";
-			hc.setMessage(message);
-			return hc;
-		}
+//		try {
+//			user = userDao.getUser(email);
+//		} catch (NullPointerException e) {
+//			message = "Provided e-mail address or password is not valid";
+//			user.setMessage(message);
+//			return user;
+//		}
 
-		if (!user.getPassword().equals(encryptedPassword)) {
+		if (user.getPassword() == null || !user.getPassword().equals(encryptedPassword)) {
 			message = "Provided e-mail address or password is not valid";
-			hc.setMessage(message);
-			return hc;
+			user.setMessage(message);
+			return user;
 		}
-		hc.setUser(user);
-		hc.setMessage(message);
-		return hc;
+		user.setPassword(null);
+		return user;
 	}
 }

@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.bildit.model.entities.HelperClass;
+import org.bildit.model.entities.User;
 import org.bildit.model.service.UserService;
 
 /**
@@ -23,16 +23,16 @@ public class LoginFormController extends HttpServlet {
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		HelperClass hc = UserService.login(email, password);
+		User user = UserService.login(email, password);
 		
-		if(hc.getMessage() != null) {
-			request.setAttribute("loginMessage", hc.getMessage());
+		if(user.getMessage() != null) {
+			request.setAttribute("loginMessage", user.getMessage());
 			request.getRequestDispatcher("loginRegister.jsp").forward(request, response);
 		}
 		
 		else {
 			HttpSession session = request.getSession();
-			session.setAttribute("user", hc.getUser());
+			session.setAttribute("user", user);
 			request.getRequestDispatcher("userProfile.jsp").forward(request, response);
 		}
 	}

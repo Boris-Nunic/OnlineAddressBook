@@ -6,7 +6,7 @@ public class User {
 	private PersonalInfo personalInfo = new PersonalInfo();
 	private Address address = new Address();
 	private String password;
-	
+	private String message;
 	public User() {
 		
 	}
@@ -46,6 +46,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 	
 	
