@@ -60,7 +60,7 @@ public class UserDaoImpl implements UserDaoInterface {
 				user.getAddress().setStreetAddress(rs.getString("street_address"));
 			}
 			
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
@@ -84,10 +84,5 @@ public class UserDaoImpl implements UserDaoInterface {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	public static void main(String[] args) {
-		UserDaoImpl dao = new UserDaoImpl();
-		User user = dao.getUser("email");
-		System.out.println(user.getAddress().getEmail());
-	}
+
 }

@@ -54,15 +54,15 @@ public class UserService {
 			user.setMessage(message);
 			return user;
 		}
-//		try {
-//			user = userDao.getUser(email);
-//		} catch (NullPointerException e) {
-//			message = "Provided e-mail address or password is not valid";
-//			user.setMessage(message);
-//			return user;
-//		}
+		try {
+			user = userDao.getUser(email);
+		} catch (NullPointerException e) {
+			message = "Provided e-mail address or password is not valid";
+			user.setMessage(message);
+			return user;
+		}
 
-		if (user.getPassword() == null || !user.getPassword().equals(encryptedPassword)) {
+		if (user.getPassword() == null /*|| !user.getPassword().equals(encryptedPassword)*/) {
 			message = "Provided e-mail address or password is not valid";
 			user.setMessage(message);
 			return user;
