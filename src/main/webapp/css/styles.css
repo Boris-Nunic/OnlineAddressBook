@@ -1,0 +1,171 @@
+#page{width: 1024px;
+color: white;
+background-color: #76938d;
+margin: auto;
+/*padding: 10px 10px;*/
+overflow: auto;
+border: 3px solid black;}
+
+header{min-height: 100px;
+background-color: #0ca8af;
+overflow: auto;
+/*margin: 0px 10px;*/
+/*padding: 10px 10px;*/
+/*border: 2px solid black;*/}
+
+#pageTitle{
+	width:880px;
+	float: left;
+	text-align: center;
+	text-transform: uppercase;}
+
+nav{
+text-align: right;
+width: 1004px;
+padding: 10px 10px;
+float:left;
+background-color: #0a6d72;
+}
+
+nav>a{color: white;
+font-size: 120%;
+margin-left: 10px;
+margin-right: 10px;
+}
+
+#logo{
+	width: 54px;
+	padding: 2px;
+	margin:10px;
+	float: left;
+}
+
+main{width:723px;
+min-height: 600px;
+margin: 0px 5px 0px 0px;
+padding: 10px 10px;
+/*background-color: green;*/
+/*border:2px solid black*/
+float: left;
+}
+
+#welcomingMessage{
+	width: 600px;
+	padding: 10px 10px;
+	/*margin: 20px 0px 0px 50px;*/
+}
+
+#welcomingMessage>p{font-size: 120%;
+text-align: center;}
+
+#welcomingMessage>h1{text-align: center;}
+
+#mainImage{width: 272px;
+padding: 10px 10px;
+margin: auto;
+}
+
+aside{width: 251px;
+min-height: 600px;
+margin: 0px 0px 0px 5px;
+padding: 10px 10px;
+/*background-color: blue;*/
+float: left;}
+
+.adverts{
+	width: 231px;
+	/*border: 1px solid black;*/
+	height: 190px;
+	margin:0px 10px 10px 10px;}
+
+figure.adverts{margin: auto;}	
+
+footer{width: 1024px;
+height: 100px;
+float: left;
+background-color: #0ca8af;
+/*margin: 10px 10px;*/}
+
+#externalLinks{color: white;
+text-align: right;
+padding: 10px 10px;
+background-color: #0a6d72;}
+
+#externalLinks>a{color:white;}
+
+a{text-decoration: none;}
+
+a:hover{color: black;}
+
+fieldset{width: 400px;
+	border: 2px solid black;
+	border-radius: 10px;
+	padding: 20px;
+	text-align: right;
+	margin: 25px auto;}
+
+.message{
+	text-align: center;
+	color: #990a0a;}
+	
+#additionalInfo{
+	margin: 100px auto;
+}
+
+legend{background-color: #0ca8af;
+	font-size: 130%;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px 10px;
+	text-transform: uppercase;}
+	
+label{font-size: 120%;}	
+
+
+
+input{margin: 10px;
+padding: 5px;
+font-size: 80%;
+width: 192px;}
+
+input.contactTableButton{width: 100px}
+
+input[type="date"] {font-size: 100%;}
+
+#profilePictureContainer{float: left;
+width: 200px;
+margin: 35px 10px 10px 10px;}
+
+#pictureAndInfo{
+	margin-top: 50px;
+}
+
+#profilePicture{width: 200px;
+height: 200px;}
+
+#profileInfo{font-size: 120%;
+padding: 10px 10px;
+margin: 10px 10px;
+}
+
+.userInfo{
+	color: black;
+}
+
+input[value="Add Profile Image"]{
+	float: left;
+	clear:left;
+}
+#contacts{border: 1px solid black;
+border-spacing: 2px;
+text-align: center;
+}
+
+th{text-transform: uppercase;
+padding: 10px 10px;
+border-bottom: 3px solid black;}
+
+td{padding: 10px 10px 10px 10px;
+/*text-align: center;*/ }
+
+tr.odd{background-color: #3e4c49;}
