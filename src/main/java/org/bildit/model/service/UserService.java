@@ -46,7 +46,15 @@ public class UserService {
 
 		String message = null;
 		String encryptedPassword = null;
-		User user = new User();
+		User user = userDao.getUser(email);
+		
+		if(user == null) {
+			user = new User();
+			message = "Provided e-mail address or password is not valid";
+			user.setMessage(message);
+			return user;
+		}
+		
 		try {
 			encryptedPassword = EncryptionService.encryptPassword(password);
 		} catch (Exception e) {
@@ -54,19 +62,13 @@ public class UserService {
 			user.setMessage(message);
 			return user;
 		}
-		try {
-			user = userDao.getUser(email);
-		} catch (NullPointerException e) {
-			message = "Provided e-mail address or password is not valid";
-			user.setMessage(message);
-			return user;
-		}
 
-		if (user.getPassword() == null /*|| !user.getPassword().equals(encryptedPassword)*/) {
+		if (user == null || !user.getPassword().equals(encryptedPassword)) {
 			message = "Provided e-mail address or password is not valid";
 			user.setMessage(message);
 			return user;
 		}
+		
 		user.setPassword(null);
 		return user;
 	}
