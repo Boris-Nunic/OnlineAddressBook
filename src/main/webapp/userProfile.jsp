@@ -57,7 +57,7 @@
 							<span class="fields">Surname:</span>
 						</td>
 						<td>
-							<span class="userInfo">Bloke</span>
+							<span class="userInfo"><c:out value="${sessionScope.user.personalInfo.surname}">Bloke</c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -65,7 +65,7 @@
 							<span class="fields">Date of Birth:</span>
 						</td>
 						<td>
-							<span class="userInfo">1/1/1111</span>
+							<span class="userInfo"><c:out value="${sessionScope.user.personalInfo.dob}">1/1/1111</c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -81,7 +81,7 @@
 							<span class="fields">Street:</span>
 						</td>
 						<td>
-							<span class="userInfo">Street and Number</span>
+							<span class="userInfo"><c:out value="${sessionScope.user.address.streetAddress}">Street and Number</c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -89,7 +89,7 @@
 							<span class="fields">City:</span>
 						</td>
 						<td>
-							<span class="userInfo">Awsome City</span>
+							<span class="userInfo"><c:out value="${sessionScope.user.address.city}">Awsome City</c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -97,7 +97,7 @@
 							<span class="fields">Country:</span>
 						</td>
 						<td>
-							<span class="userInfo">Terrific Country</span>
+							<span class="userInfo"><c:out value="${sessionScope.user.address.country}">Terrific Country</c:out></span>
 						</td>
 					</tr>
 				</table>
