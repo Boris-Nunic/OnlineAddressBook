@@ -72,4 +72,15 @@ public class UserService {
 		user.setPassword(null);
 		return user;
 	}
+	
+	//Edit profile logic
+	public static String editProfile(User user) {
+		String message = null;
+		int rowsAffected = userDao.editUser(user);
+		if(rowsAffected !=1) {
+			message = "Something went wrong. Please try again";
+			return message;
+		}
+		return message;
+	}
 }

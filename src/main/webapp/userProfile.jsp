@@ -27,7 +27,7 @@
 				<nav>
 					<a href="contacts.html">My Contacts</a>
 					<a href="index.html">Logout</a>
-					<a href="info.html">Edid Profile</a>
+					<a href="editProfile">Edit Profile</a>
 					<a href="index.html">Delete Profile</a>
 				</nav>
 			
@@ -49,7 +49,7 @@
 							<span class="fields">First Name:</span>
 						</td>
 						<td>
-							<span class="userInfo"><c:out value="${sessionScope.user.personalInfo.firstName}">Some Random</c:out></span>
+							<span class="userInfo"><c:out value="${sessionScope.user.personalInfo.firstName}"></c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -57,7 +57,7 @@
 							<span class="fields">Surname:</span>
 						</td>
 						<td>
-							<span class="userInfo"><c:out value="${sessionScope.user.personalInfo.surname}">Bloke</c:out></span>
+							<span class="userInfo"><c:out value="${sessionScope.user.personalInfo.surname}"></c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -65,7 +65,15 @@
 							<span class="fields">Date of Birth:</span>
 						</td>
 						<td>
-							<span class="userInfo"><c:out value="${sessionScope.user.personalInfo.dob}">1/1/1111</c:out></span>
+							<span class="userInfo"><c:out value="${sessionScope.user.personalInfo.dob}"></c:out></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="fields">Phone Number</span>
+						</td>
+						<td>
+							<span class="userInfo"><c:out value="${sessionScope.user.personalInfo.phoneNumber}"></c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -73,7 +81,7 @@
 							<span class="fields">E-mail:</span>
 						</td>
 						<td>
-							<span class="userInfo"><c:out value="${sessionScope.user.address.email}">something@something@com</c:out></span>
+							<span class="userInfo"><c:out value="${sessionScope.user.address.email}"></c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -81,7 +89,7 @@
 							<span class="fields">Street:</span>
 						</td>
 						<td>
-							<span class="userInfo"><c:out value="${sessionScope.user.address.streetAddress}">Street and Number</c:out></span>
+							<span class="userInfo"><c:out value="${sessionScope.user.address.streetAddress}"></c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -89,7 +97,7 @@
 							<span class="fields">City:</span>
 						</td>
 						<td>
-							<span class="userInfo"><c:out value="${sessionScope.user.address.city}">Awsome City</c:out></span>
+							<span class="userInfo"><c:out value="${sessionScope.user.address.city}"></c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -97,7 +105,7 @@
 							<span class="fields">Country:</span>
 						</td>
 						<td>
-							<span class="userInfo"><c:out value="${sessionScope.user.address.country}">Terrific Country</c:out></span>
+							<span class="userInfo"><c:out value="${sessionScope.user.address.country}"></c:out></span>
 						</td>
 					</tr>
 				</table>
