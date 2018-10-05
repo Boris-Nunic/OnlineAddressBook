@@ -40,6 +40,12 @@
   	<description></description>
   	<servlet-class>org.bildit.controller.DeleteProfileController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>MyContactsController</servlet-name>
+  	<display-name>MyContactsController</display-name>
+  	<description></description>
+  	<servlet-class>org.bildit.controller.MyContactsController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginRegisterController</servlet-name>
   	<url-pattern>/loginRegister</url-pattern>
@@ -63,5 +69,9 @@
   <servlet-mapping>
   	<servlet-name>DeleteProfileController</servlet-name>
   	<url-pattern>/deleteProfile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MyContactsController</servlet-name>
+  	<url-pattern>/myContacts</url-pattern>
   </servlet-mapping>
 </web-app>

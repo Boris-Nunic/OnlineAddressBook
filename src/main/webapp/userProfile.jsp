@@ -25,7 +25,7 @@
 				<h1 id="pageTitle">Online Address Book</h1>
 		
 				<nav>
-					<a href="contacts.html">My Contacts</a>
+					<a href="myContacts">My Contacts</a>
 					<a href="editProfile">Edit Profile</a>
 					<a href="logout">Logout</a>
 <!-- 					<a href="deleteProfile">Delete Profile</a> -->
