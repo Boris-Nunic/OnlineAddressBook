@@ -1,12 +1,21 @@
 package org.bildit.model.entities;
 
 public class Contact {
-
+	
+	Integer id;
 	private PersonalInfo personalInfo = new PersonalInfo();
 	private Address address = new Address();
 	
 	public Contact() {
 		
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public PersonalInfo getPersonalInfo() {
