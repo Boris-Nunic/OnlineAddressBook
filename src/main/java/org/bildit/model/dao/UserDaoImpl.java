@@ -96,8 +96,16 @@ public class UserDaoImpl implements UserDaoInterface {
 
 	@Override
 	public int deleteUser(Integer id) {
-		// TODO Auto-generated method stub
-		return 0;
+		String query = "DELETE FROM users WHERE user_id = ?";
+		int rowsAffected = 0;
+		try {
+			PreparedStatement ps = connection.prepareStatement(query);
+			ps.setInt(1, id);
+			rowsAffected = ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rowsAffected;
 	}
 
 	@Override

@@ -26,9 +26,9 @@
 		
 				<nav>
 					<a href="contacts.html">My Contacts</a>
-					<a href="logout">Logout</a>
 					<a href="editProfile">Edit Profile</a>
-					<a href="index.html">Delete Profile</a>
+					<a href="logout">Logout</a>
+<!-- 					<a href="deleteProfile">Delete Profile</a> -->
 				</nav>
 			
 			</header>
@@ -108,6 +108,13 @@
 							<span class="userInfo"><c:out value="${sessionScope.user.address.country}"></c:out></span>
 						</td>
 					</tr>
+					<tr>
+						<td colspan="2">
+							<form action="deleteProfile" method="post">
+								<input type="submit" value="Delete Profile"/>
+							</form>
+						</td>
+					</tr>
 				</table>
 			</div>	
 							
@@ -137,7 +144,7 @@
 			<div id="externalLinks">
 				<a href="https://www.youtube.com">YouTube</a>
 				<a href="https://www.wikipedia.org">Wikipedia</a>
-				<a href="https://www.yts.ag">YIFY Torrentz</a>
+				<a href="https://www.yts.ag">YIFY Torrents</a>
 				<a href="https://www.imdb.com">IMDb</a>
 			</div>	
 			</footer>

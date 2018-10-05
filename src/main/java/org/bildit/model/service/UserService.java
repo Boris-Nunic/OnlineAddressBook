@@ -83,4 +83,15 @@ public class UserService {
 		}
 		return message;
 	}
+	
+	// Delete profile logic
+	public static String deleteProfile(Integer id) {
+		String message = null;
+		int rowsAffected = userDao.deleteUser(id);
+		if(rowsAffected !=1) {
+			message = "Somthing went wrong please try again";
+			return message;
+		}
+		return message;
+	}
 }
