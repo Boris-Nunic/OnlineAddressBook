@@ -10,7 +10,7 @@ import org.bildit.model.entities.User;
 
 public class UserDaoImpl implements UserDaoInterface {
 
-	Connection connection = ConnectionManager.getInstance().getConnection();
+	private Connection connection = ConnectionManager.getInstance().getConnection();
 
 	@Override
 	public int addUser(User user) throws SQLException {
