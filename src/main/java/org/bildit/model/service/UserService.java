@@ -72,4 +72,26 @@ public class UserService {
 		user.setPassword(null);
 		return user;
 	}
+	
+	//Edit profile logic
+	public static String editProfile(User user) {
+		String message = null;
+		int rowsAffected = userDao.editUser(user);
+		if(rowsAffected !=1) {
+			message = "Something went wrong. Please try again";
+			return message;
+		}
+		return message;
+	}
+	
+	// Delete profile logic
+	public static String deleteProfile(Integer id) {
+		String message = null;
+		int rowsAffected = userDao.deleteUser(id);
+		if(rowsAffected !=1) {
+			message = "Somthing went wrong please try again";
+			return message;
+		}
+		return message;
+	}
 }
