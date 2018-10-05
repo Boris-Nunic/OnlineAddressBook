@@ -26,7 +26,7 @@
 		
 				<nav>
 					<a href="contacts.html">My Contacts</a>
-					<a href="index.html">Logout</a>
+					<a href="logout">Logout</a>
 					<a href="editProfile">Edit Profile</a>
 					<a href="index.html">Delete Profile</a>
 				</nav>

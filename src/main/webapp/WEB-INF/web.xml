@@ -28,6 +28,12 @@
   	<description></description>
   	<servlet-class>org.bildit.controller.EditProfileController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>LogoutController</servlet-name>
+  	<display-name>LogoutController</display-name>
+  	<description></description>
+  	<servlet-class>org.bildit.controller.LogoutController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginRegisterController</servlet-name>
   	<url-pattern>/loginRegister</url-pattern>
@@ -43,5 +49,9 @@
   <servlet-mapping>
   	<servlet-name>EditProfileController</servlet-name>
   	<url-pattern>/editProfile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogoutController</servlet-name>
+  	<url-pattern>/logout</url-pattern>
   </servlet-mapping>
 </web-app>
