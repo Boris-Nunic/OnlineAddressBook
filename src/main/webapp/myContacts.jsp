@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <%@page isELIgnored="false" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html lang="en">
 
@@ -21,14 +22,16 @@
 				<h1 id="pageTitle">Online Address Book</h1>
 		
 				<nav>
-					<a href="contactInfo.html">Add Contact</a>
+					<a href="addContact">Add Contact</a>
 					<a href="userProfile.html">My Profile</a>
 				</nav>
 			
 			</header>
 		
 			<main>
-				
+				<div class="message">
+					<c:out value="${requestScope.addContactMessage}"></c:out>
+				</div>	
 				<table id="contacts">
 					<tr class="head">
 						

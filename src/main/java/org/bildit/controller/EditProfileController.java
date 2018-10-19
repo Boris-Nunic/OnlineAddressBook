@@ -39,12 +39,15 @@ public class EditProfileController extends HttpServlet {
 		String streetAddress = request.getParameter("streetAddress");
 		String city = request.getParameter("city");
 		String country = request.getParameter("country");
-		Date dob = Date.valueOf(request.getParameter("dob"));
+		String dob = request.getParameter("dob");
 
+		if(!dob.equals("")) {
+			user.getPersonalInfo().setDob(Date.valueOf(dob));
+		}
+		
 		user.getPersonalInfo().setFirstName(firstName);
 		user.getPersonalInfo().setSurname(surname);
 		user.getPersonalInfo().setPhoneNumber(phoneNumber);
-		user.getPersonalInfo().setDob(dob);
 		user.getAddress().setStreetAddress(streetAddress);
 		user.getAddress().setCity(city);
 		user.getAddress().setCountry(country);

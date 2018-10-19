@@ -28,7 +28,7 @@
 			</header>
 			
 			<main>
-			<form action="" method="">
+			<form action="addContact" method="post">
 				<fieldset id="additionalInfo">
 				
 					<legend>Contact Info</legend>
