@@ -1,7 +1,6 @@
 package org.bildit.model.service;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.bildit.model.dao.ContactDaoImpl;
 import org.bildit.model.entities.Contact;
@@ -27,6 +26,11 @@ public class ContactService {
 
 	public static ArrayList<Contact> getAllContacts(Integer userId) {
 		ArrayList<Contact> contacts = (ArrayList<Contact>) contactDao.getAllContacts(userId);
+		return contacts;
+	}
+	
+	public static ArrayList<Contact> searchContacts(String searchQuery, Integer userId){
+		ArrayList<Contact> contacts = (ArrayList<Contact>)contactDao.searchContacts(searchQuery, userId);
 		return contacts;
 	}
 
