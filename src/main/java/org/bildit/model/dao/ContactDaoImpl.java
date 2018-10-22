@@ -2,6 +2,9 @@ package org.bildit.model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bildit.model.entities.Contact;
@@ -52,8 +55,33 @@ public class ContactDaoImpl implements ContactDaoInterface {
 
 	@Override
 	public List<Contact> getAllContacts(Integer userId) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		String query = "SELECT * FROM contacts WHERE user_id = ? ORDER BY first_name";
+		Contact contact = null;
+		ResultSet rs = null;
+		List<Contact> contacts = new ArrayList<>();
+		
+		try {
+			PreparedStatement ps = connection.prepareStatement(query);
+			ps.setInt(1, userId);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				contact = new Contact();
+				contact.setId(rs.getInt("contacts_id"));
+				contact.getPersonalInfo().setFirstName(rs.getString("first_name"));
+				contact.getPersonalInfo().setSurname(rs.getString("surname"));
+				contact.getPersonalInfo().setPhoneNumber(rs.getString("phone_number"));
+				contact.getPersonalInfo().setDob(rs.getDate("dob"));
+				contact.getAddress().setEmail(rs.getString("email"));
+				contact.getAddress().setStreetAddress(rs.getString("street_address"));
+				contact.getAddress().setCity(rs.getString("street_address"));
+				contact.getAddress().setCountry("country");
+				contacts.add(contact);
+				}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return contacts;
 	}
-
 }
