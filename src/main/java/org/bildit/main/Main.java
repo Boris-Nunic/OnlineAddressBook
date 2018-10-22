@@ -17,7 +17,7 @@ public class Main {
 //	
 		ContactDaoImpl dao = new ContactDaoImpl();
 //		System.out.println(dao.addContact(contact, 1));
-		ArrayList<Contact> contacts =(ArrayList<Contact>) dao.getAllContacts(21);
+		ArrayList<Contact> contacts =(ArrayList<Contact>) dao.searchContacts("ok", 21);
 		System.out.println(contacts.get(0).getPersonalInfo().getFirstName());
 
 	}

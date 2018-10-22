@@ -15,13 +15,12 @@ public class ContactDaoImpl implements ContactDaoInterface {
 
 	@Override
 	public Integer addContact(Contact contact, Integer userId) {
-		String query = "INSERT INTO contacts (first_name, surname, email, "
-				+ "dob, phone_number, street_address, city, country, user_id) " 
-				+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sqlQuery = "INSERT INTO contacts (first_name, surname, email, "
+				+ "dob, phone_number, street_address, city, country, user_id) " + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		Integer rowsAffected = 0;
-		
+
 		try {
-			PreparedStatement ps = connection.prepareStatement(query);
+			PreparedStatement ps = connection.prepareStatement(sqlQuery);
 			ps.setString(1, contact.getPersonalInfo().getFirstName());
 			ps.setString(2, contact.getPersonalInfo().getSurname());
 			ps.setString(3, contact.getAddress().getEmail());
@@ -31,13 +30,13 @@ public class ContactDaoImpl implements ContactDaoInterface {
 			ps.setString(7, contact.getAddress().getCity());
 			ps.setString(8, contact.getAddress().getCountry());
 			ps.setInt(9, userId);
-			
+
 			rowsAffected = ps.executeUpdate();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return rowsAffected;
 	}
 
@@ -55,18 +54,18 @@ public class ContactDaoImpl implements ContactDaoInterface {
 
 	@Override
 	public List<Contact> getAllContacts(Integer userId) {
-		
-		String query = "SELECT * FROM contacts WHERE user_id = ? ORDER BY first_name";
+
+		String sqlQuery = "SELECT * FROM contacts WHERE user_id = ? ORDER BY first_name";
 		Contact contact = null;
 		ResultSet rs = null;
 		List<Contact> contacts = new ArrayList<>();
-		
+
 		try {
-			PreparedStatement ps = connection.prepareStatement(query);
+			PreparedStatement ps = connection.prepareStatement(sqlQuery);
 			ps.setInt(1, userId);
 			rs = ps.executeQuery();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				contact = new Contact();
 				contact.setId(rs.getInt("contacts_id"));
 				contact.getPersonalInfo().setFirstName(rs.getString("first_name"));
@@ -78,10 +77,46 @@ public class ContactDaoImpl implements ContactDaoInterface {
 				contact.getAddress().setCity(rs.getString("street_address"));
 				contact.getAddress().setCountry("country");
 				contacts.add(contact);
-				}
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return contacts;
+	}
+
+	@Override
+	public List<Contact> searchContacts(String searchQuery, Integer userId) {
+
+		String SqlQuery = "SELECT *  FROM contacts WHERE (first_name LIKE '%" + searchQuery + "%' OR surname LIKE '%"
+				+ searchQuery + "%') AND user_id = ? ORDER BY first_name";
+
+		Contact contact = null;
+		List<Contact> contacts = null;
+		ResultSet rs = null;
+		
+		try {
+			PreparedStatement ps = connection.prepareStatement(SqlQuery);
+			ps.setInt(1, userId);
+			rs = ps.executeQuery();
+			contacts = new ArrayList<>();
+			
+			while(rs.next()) {
+				contact = new Contact();
+				contact.setId(rs.getInt("contacts_id"));
+				contact.getPersonalInfo().setFirstName(rs.getString("first_name"));
+				contact.getPersonalInfo().setSurname(rs.getString("surname"));
+				contact.getPersonalInfo().setDob(rs.getDate("dob"));
+				contact.getPersonalInfo().setPhoneNumber(rs.getString("phone_number"));
+				contact.getAddress().setEmail(rs.getString("email"));
+				contact.getAddress().setStreetAddress(rs.getString("street_address"));
+				contact.getAddress().setCity(rs.getString("city"));
+				contact.getAddress().setCountry(rs.getString("country"));
+				contacts.add(contact);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		return contacts;
 	}
 }

@@ -35,7 +35,7 @@
 				
 				<div class="search">
 					<label for="contctSearch">Search contacts</label>
-					<input type="text" name="search" id="contactSearcs"/>
+					<input type="text" name="searchQuery" id="contactSearch"/>
 				</div>
 		
 				<table id="contacts">

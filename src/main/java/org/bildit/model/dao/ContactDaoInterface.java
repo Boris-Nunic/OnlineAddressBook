@@ -13,5 +13,7 @@ public interface ContactDaoInterface {
 	public Integer editContact(Contact contact);
 	
 	public List<Contact> getAllContacts(Integer userId);
+
+	public List<Contact> searchContacts(String searchQuery, Integer userId);
 	
 }
