@@ -31,7 +31,8 @@
 			<main>
 				<div class="message">
 					<c:out value="${requestScope.addContactMessage}"></c:out>
-				</div>	
+				</div>
+		
 				<table id="contacts">
 					<tr class="head">
 						
@@ -41,33 +42,34 @@
 						<th scope="col">Phone Numbr</th>
 						<th scope="col" colspan="2">Some Buttons</th>
 					</tr>
-					
-					<tr>
-						<td>1</td>
-						<td>Name</td>
-						<td>Surname</td>
-						<td>000111</td>
+					<c:forEach items="${requestScope.contacts}" var="contact" varStatus="loop">
+					<tr class="<c:if test="${loop.count % 2 != 0}">odd</c:if>">
+						<td>${loop.count}</td>
+						<td>${contact.personalInfo.firstName}</td>
+						<td>${contact.personalInfo.surname}</td>
+						<td>${contact.personalInfo.phoneNumber}</td>
 						<td><input class="contactTableButton" type="button" value="details" /></td>
 						<td><input class="contactTableButton" type="button" value="delete" /></td>
 					</tr>
+					</c:forEach>
 					
-					<tr class="odd">
-						<td>2</td>
-						<td>Onother</td>
-						<td>Surnameeeee</td>
-						<td>222111</td>
-						<td><input class="contactTableButton"  type="button" value="details" /></td>
-						<td><input class="contactTableButton" type="button" value="delete" /></td>
-					</tr>
+<!-- 					<tr class="odd"> -->
+<!-- 						<td>2</td> -->
+<!-- 						<td>Onother</td> -->
+<!-- 						<td>Surnameeeee</td> -->
+<!-- 						<td>222111</td> -->
+<!-- 						<td><input class="contactTableButton"  type="button" value="details" /></td> -->
+<!-- 						<td><input class="contactTableButton" type="button" value="delete" /></td> -->
+<!-- 					</tr> -->
 					
-					<tr>
-						<td>3</td>
-						<td>Ono-More</td>
-						<td>Surname</td>
-						<td>222333</td>
-						<td><input class="contactTableButton" type="button" value="details" /></td>
-						<td><input class="contactTableButton" type="button" value="delete" /></td>
-					</tr>
+<!-- 					<tr> -->
+<!-- 						<td>3</td> -->
+<!-- 						<td>Ono-More</td> -->
+<!-- 						<td>Surname</td> -->
+<!-- 						<td>222333</td> -->
+<!-- 						<td><input class="contactTableButton" type="button" value="details" /></td> -->
+<!-- 						<td><input class="contactTableButton" type="button" value="delete" /></td> -->
+<!-- 					</tr> -->
 				</table>
 				
 			</main>

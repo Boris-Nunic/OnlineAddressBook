@@ -26,7 +26,7 @@ public class MyContactsController extends HttpServlet {
 			throws ServletException, IOException {
 		User user = (User)request.getSession().getAttribute("user");
 		ArrayList<Contact> contacts = ContactService.getAllContacts(user.getId());
-		request.setAttribute("allContacts", contacts);
+		request.setAttribute("contacts", contacts);
 		request.getRequestDispatcher("myContacts.jsp").forward(request, response);
 	}
 
