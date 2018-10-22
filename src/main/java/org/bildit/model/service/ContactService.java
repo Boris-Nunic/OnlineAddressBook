@@ -1,5 +1,7 @@
 package org.bildit.model.service;
 
+import java.util.List;
+
 import org.bildit.model.dao.ContactDaoImpl;
 import org.bildit.model.entities.Contact;
 
@@ -20,6 +22,10 @@ public class ContactService {
 			message = "This contact was successfully added to your contacts";
 		}
 		return message;
+	}
+	
+	public static List<Contact> getAllContacts(Integer userId){
+		return null;
 	}
 			
 

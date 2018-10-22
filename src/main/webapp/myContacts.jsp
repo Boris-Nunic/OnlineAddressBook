@@ -23,7 +23,7 @@
 		
 				<nav>
 					<a href="addContact">Add Contact</a>
-					<a href="userProfile.html">My Profile</a>
+					<a href="userProfile">My Profile</a>
 				</nav>
 			
 			</header>
