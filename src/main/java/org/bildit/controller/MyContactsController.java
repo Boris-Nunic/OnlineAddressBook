@@ -29,5 +29,10 @@ public class MyContactsController extends HttpServlet {
 		request.setAttribute("contacts", contacts);
 		request.getRequestDispatcher("myContacts.jsp").forward(request, response);
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
 
 }
