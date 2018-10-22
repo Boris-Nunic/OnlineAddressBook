@@ -32,6 +32,11 @@
 				<div class="message">
 					<c:out value="${requestScope.addContactMessage}"></c:out>
 				</div>
+				
+				<div class="search">
+					<label for="contctSearch">Search contacts</label>
+					<input type="text" name="search" id="contactSearcs"/>
+				</div>
 		
 				<table id="contacts">
 					<tr class="head">
