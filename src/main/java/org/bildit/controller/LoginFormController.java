@@ -27,7 +27,7 @@ public class LoginFormController extends HttpServlet {
 		
 		if(user.getMessage() != null) {
 			request.setAttribute("loginMessage", user.getMessage());
-			request.getRequestDispatcher("loginRegister.jsp").forward(request, response);
+			request.getRequestDispatcher("loginRegister").forward(request, response);
 		}
 		
 		else {

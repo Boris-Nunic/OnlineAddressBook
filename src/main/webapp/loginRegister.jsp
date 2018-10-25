@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <%@page isELIgnored="false"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html lang="en">
 
@@ -46,7 +47,7 @@
 							
 							<input type="submit" value="Login" />
 							
-							<div class="message"> ${loginMessage} </div>
+							<div class="message"><c:out value="${requestScope.loginMessage}"></c:out> </div>
 							
 					</fieldset>
 				</form>
