@@ -33,7 +33,7 @@ public class LoginFormController extends HttpServlet {
 		else {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
-			request.getRequestDispatcher("userProfile.jsp").forward(request, response);
+			request.getRequestDispatcher("userProfile").forward(request, response);
 		}
 	}
 
