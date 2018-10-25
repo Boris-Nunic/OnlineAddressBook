@@ -21,7 +21,7 @@
 				<h1 id="pageTitle">Online Address Book</h1>
 				
 				<nav>
-					<a href="userProfile.html">My Profile</a>
+					<a href="userProfile">My Profile</a>
 					<a href="index.html">Logout</a>
 				</nav>
 				
