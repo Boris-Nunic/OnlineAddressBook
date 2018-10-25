@@ -28,7 +28,7 @@
 					<a href="myContacts">My Contacts</a>
 					<a href="editProfile">Edit Profile</a>
 					<a href="logout">Logout</a>
-<!-- 					<a href="deleteProfile">Delete Profile</a> -->
+ 					<a href="deleteProfile">Delete Profile</a> 
 				</nav>
 			
 			</header>
@@ -108,13 +108,13 @@
 							<span class="userInfo"><c:out value="${sessionScope.user.address.country}"></c:out></span>
 						</td>
 					</tr>
-					<tr>
-						<td colspan="2">
-							<form action="deleteProfile" method="post">
-								<input type="submit" value="Delete Profile"/>
-							</form>
-						</td>
-					</tr>
+<!-- 					<tr> -->
+<!-- 						<td colspan="2"> -->
+<!-- 							<form action="deleteProfile" method="post"> -->
+<!-- 								<input type="submit" value="Delete Profile"/> -->
+<!-- 							</form> -->
+<!-- 						</td> -->
+<!-- 					</tr> -->
 				</table>
 			</div>	
 							
