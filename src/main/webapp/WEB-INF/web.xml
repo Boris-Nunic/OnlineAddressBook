@@ -4,6 +4,16 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <filter>
+  	<filter-name>UserAutenticationFilter</filter-name>
+  	<display-name>UserAutenticationFilter</display-name>
+  	<description></description>
+  	<filter-class>org.bildit.filters.UserAutenticationFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>UserAutenticationFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
   <servlet>
   	<servlet-name>LoginRegisterController</servlet-name>
   	<display-name>LoginRegisterController</display-name>
