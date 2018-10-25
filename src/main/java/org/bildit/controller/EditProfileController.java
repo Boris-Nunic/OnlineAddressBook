@@ -32,29 +32,32 @@ public class EditProfileController extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		User user = (User) (session.getAttribute("user"));
-		
+
 		String firstName = request.getParameter("firstName");
 		String surname = request.getParameter("surname");
 		String phoneNumber = request.getParameter("phoneNumber");
 		String streetAddress = request.getParameter("streetAddress");
 		String city = request.getParameter("city");
 		String country = request.getParameter("country");
-		Date dob = Date.valueOf(request.getParameter("dob"));
+		String dob = request.getParameter("dob");
+
+		if(!dob.equals("")) {
+			user.getPersonalInfo().setDob(Date.valueOf(dob));
+		}
 		
 		user.getPersonalInfo().setFirstName(firstName);
 		user.getPersonalInfo().setSurname(surname);
 		user.getPersonalInfo().setPhoneNumber(phoneNumber);
-		user.getPersonalInfo().setDob(dob);
 		user.getAddress().setStreetAddress(streetAddress);
 		user.getAddress().setCity(city);
 		user.getAddress().setCountry(country);
-		
+
 		String editProfileMessage = UserService.editProfile(user);
-		
-		if(editProfileMessage == null) {
+
+		if (editProfileMessage == null) {
 			request.getRequestDispatcher("userProfile.jsp").forward(request, response);
 		}
-		
+
 		else {
 			request.setAttribute("editProfileMessage", editProfileMessage);
 			request.getRequestDispatcher("editProfile.jsp").forward(request, response);

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
-<%@page isELIgnored="false"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false" %>
 
 <html lang="en">
 
@@ -29,57 +28,56 @@
 			</header>
 			
 			<main>
-			<form action="editProfile" method="post">
+			<form action="addContact" method="post">
 				<fieldset id="additionalInfo">
 				
-					<legend>Info</legend>
+					<legend>Contact Info</legend>
 					
 					<div>
 					<label>First Name:
-						<input type="text" name="firstName" value="${sessionScope.user.personalInfo.firstName}"/><br />
+						<input type="text" name="firstName" /><br />
 					</label>
 					</div>
 					<div>
 					<label>Surname:
-						<input type="text" name="surname"  value="${sessionScope.user.personalInfo.surname}"/>
+						<input type="text" name="surname" />
 					</label>
 					</div>
-<!-- 					<div> -->
-<!-- 					<label>E-mail: -->
-<!-- 						<input type="email" name="email"  value="${sessionScope.user.address.email}"/> -->
-<!-- 					</label> -->
-<!-- 					</div> -->
+					<div>
+					<label>E-mail:
+						<input type="email" name="email" />
+					</label>
+					</div>
 					<div>
 					<label>Phone Number:
-						<input type="tel" name="phoneNumber"  value="${sessionScope.user.personalInfo.phoneNumber}" />
+						<input type="tel" name="phoneNumber" />
 					</label>
 					</div>
 					<div>
 					<label>Street Address:
-						<input type="text" name="streetAddress" value="${sessionScope.user.address.streetAddress}"/>
+						<input type="text" name="streetAddress" />
 					</label>
 					</div>
 					<div>
 					<label>City:
-						<input type="text" name="city" value="${sessionScope.user.address.city}"/>
+						<input type="text" name="city" />
 					</label>
 					</div>
 					<div>
 					<label>Country:
-						<input type="text" name="country" value="${sessionScope.user.address.country}"/>
+						<input type="text" name="country" />
 					</label>
 					</div>
 					<div>
 					<label>Date of Birth:
-						<input type="date" name="dob"  value="${sessionScope.user.personalInfo.dob}"/>
+						<input type="date" name="dob" />
 					</label>
 					</div>
 					<div>
-						<input type="submit" value="Finish"/>
+						<input type="submit" value="Finish">
 					</div>
-					<div class="message"> ${requestScope.editProfileMessage} </div>
 				</fieldset>
-				</form>>
+				</form>
 			</main>
 			
 			<aside>

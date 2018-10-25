@@ -7,16 +7,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class LoginRegisterController
+ * Servlet implementation class UserProfileController
  */
-public class LoginRegisterController extends HttpServlet {
+public class UserProfileController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("loginRegister.jsp").forward(request, response);
+		// TODO Auto-generated method stub
+		request.getRequestDispatcher("userProfile.jsp").forward(request, response);
 	}
 	
 	@Override
