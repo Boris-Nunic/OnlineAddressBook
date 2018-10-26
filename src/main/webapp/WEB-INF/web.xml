@@ -92,6 +92,12 @@
   	<description></description>
   	<servlet-class>org.bildit.controller.UserProfileController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>SearchContactsController</servlet-name>
+  	<display-name>SearchContactsController</display-name>
+  	<description></description>
+  	<servlet-class>org.bildit.controller.SearchContactsController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginRegisterController</servlet-name>
   	<url-pattern>/loginRegister</url-pattern>
@@ -127,5 +133,9 @@
   <servlet-mapping>
   	<servlet-name>UserProfileController</servlet-name>
   	<url-pattern>/userProfile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SearchContactsController</servlet-name>
+  	<url-pattern>/searchContacts</url-pattern>
   </servlet-mapping>
 </web-app>

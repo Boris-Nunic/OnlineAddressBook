@@ -34,7 +34,7 @@
 				</div>
 				
 				<div class="search">
-				<form action="" method="">
+				<form action="searchContacts" method="get">
 					<label for="contctSearch" hidden="true">Search contacts</label>
 					<input type="text" name="searchQuery" id="contactSearch"/>
 					<input type="submit" value="Search"/>
