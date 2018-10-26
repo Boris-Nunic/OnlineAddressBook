@@ -43,6 +43,7 @@
   	<description></description>
   	<servlet-class>org.bildit.controller.LoginRegisterController</servlet-class>
   </servlet>
+  
   <servlet>
   	<servlet-name>RegistrationFormController</servlet-name>
   	<display-name>RegistrationFormController</display-name>

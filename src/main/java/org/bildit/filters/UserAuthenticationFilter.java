@@ -44,6 +44,9 @@ public class UserAuthenticationFilter implements Filter {
 		}
 
 		else {
+			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+			response.setHeader("Pragma", "no-cache");
+			response.setDateHeader("Expires", -1);
 			chain.doFilter(request, response);
 		}
 
