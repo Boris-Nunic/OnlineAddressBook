@@ -4,16 +4,39 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
   <filter>
-  	<filter-name>UserAutenticationFilter</filter-name>
-  	<display-name>UserAutenticationFilter</display-name>
+  	<filter-name>UserAuthenticationFilter</filter-name>
+  	<display-name>UserAuthenticationFilter</display-name>
   	<description></description>
-  	<filter-class>org.bildit.filters.UserAutenticationFilter</filter-class>
+  	<filter-class>org.bildit.filters.UserAuthenticationFilter</filter-class>
   </filter>
+  
   <filter-mapping>
-  	<filter-name>UserAutenticationFilter</filter-name>
-  	<url-pattern>/*</url-pattern>
+  	<filter-name>UserAuthenticationFilter</filter-name>
+  	<url-pattern>/userProfile</url-pattern>
   </filter-mapping>
+  
+   <filter-mapping>
+  	<filter-name>UserAuthenticationFilter</filter-name>
+  	<url-pattern>/editProfile</url-pattern>
+  </filter-mapping>
+  
+   <filter-mapping>
+  	<filter-name>UserAuthenticationFilter</filter-name>
+  	<url-pattern>/deleteProfile</url-pattern>
+  </filter-mapping>
+  
+   <filter-mapping>
+  	<filter-name>UserAuthenticationFilter</filter-name>
+  	<url-pattern>/myContacts</url-pattern>
+  </filter-mapping>
+  
+   <filter-mapping>
+  	<filter-name>UserAuthenticationFilter</filter-name>
+  	<url-pattern>/addContact</url-pattern>
+  </filter-mapping>
+  
   <servlet>
   	<servlet-name>LoginRegisterController</servlet-name>
   	<display-name>LoginRegisterController</display-name>
