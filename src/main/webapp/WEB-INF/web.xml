@@ -12,6 +12,13 @@
   	<filter-class>org.bildit.filters.UserAuthenticationFilter</filter-class>
   </filter>
   
+  <filter>
+  	<filter-name>CachingFilter</filter-name>
+  	<display-name>CachingFilter</display-name>
+  	<description>Filter that prevents caching on certain pages</description>
+  	<filter-class>org.bildit.filters.CachingFilter</filter-class>
+  </filter>
+  
   <filter-mapping>
   	<filter-name>UserAuthenticationFilter</filter-name>
   	<url-pattern>/userProfile</url-pattern>
@@ -37,6 +44,21 @@
   	<url-pattern>/addContact</url-pattern>
   </filter-mapping>
   
+   <filter-mapping>
+   	<filter-name>CachingFilter</filter-name>
+   	<url-pattern>/login</url-pattern>
+   </filter-mapping>
+   
+   <filter-mapping>
+   <filter-name>CachingFilter</filter-name>
+   <url-pattern>/userProfile</url-pattern>
+   </filter-mapping>
+   
+   <filter-mapping>
+   <filter-name>CachingFilter</filter-name>
+   <url-pattern>/myContacts</url-pattern>
+   </filter-mapping>
+  
   <servlet>
   	<servlet-name>LoginRegisterController</servlet-name>
   	<display-name>LoginRegisterController</display-name>
@@ -50,90 +72,108 @@
   	<description></description>
   	<servlet-class>org.bildit.controller.RegistrationFormController</servlet-class>
   </servlet>
+  
   <servlet>
   	<servlet-name>LoginFormController</servlet-name>
   	<display-name>LoginFormController</display-name>
   	<description></description>
   	<servlet-class>org.bildit.controller.LoginFormController</servlet-class>
   </servlet>
+  
   <servlet>
   	<servlet-name>EditProfileController</servlet-name>
   	<display-name>EditProfileController</display-name>
   	<description></description>
   	<servlet-class>org.bildit.controller.EditProfileController</servlet-class>
   </servlet>
+  
   <servlet>
   	<servlet-name>LogoutController</servlet-name>
   	<display-name>LogoutController</display-name>
   	<description></description>
   	<servlet-class>org.bildit.controller.LogoutController</servlet-class>
   </servlet>
+  
   <servlet>
   	<servlet-name>DeleteProfileController</servlet-name>
   	<display-name>DeleteProfileController</display-name>
   	<description></description>
   	<servlet-class>org.bildit.controller.DeleteProfileController</servlet-class>
   </servlet>
+  
   <servlet>
   	<servlet-name>MyContactsController</servlet-name>
   	<display-name>MyContactsController</display-name>
   	<description></description>
   	<servlet-class>org.bildit.controller.MyContactsController</servlet-class>
   </servlet>
+  
   <servlet>
   	<servlet-name>AddContactController</servlet-name>
   	<display-name>AddContactController</display-name>
   	<description></description>
   	<servlet-class>org.bildit.controller.AddContactController</servlet-class>
   </servlet>
+  
   <servlet>
   	<servlet-name>UserProfileController</servlet-name>
   	<display-name>UserProfileController</display-name>
   	<description></description>
   	<servlet-class>org.bildit.controller.UserProfileController</servlet-class>
   </servlet>
+  
   <servlet>
   	<servlet-name>SearchContactsController</servlet-name>
   	<display-name>SearchContactsController</display-name>
   	<description></description>
   	<servlet-class>org.bildit.controller.SearchContactsController</servlet-class>
   </servlet>
+  
   <servlet-mapping>
   	<servlet-name>LoginRegisterController</servlet-name>
   	<url-pattern>/loginRegister</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>RegistrationFormController</servlet-name>
   	<url-pattern>/registration</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>LoginFormController</servlet-name>
   	<url-pattern>/login</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>EditProfileController</servlet-name>
   	<url-pattern>/editProfile</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>LogoutController</servlet-name>
   	<url-pattern>/logout</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>DeleteProfileController</servlet-name>
   	<url-pattern>/deleteProfile</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>MyContactsController</servlet-name>
   	<url-pattern>/myContacts</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>AddContactController</servlet-name>
   	<url-pattern>/addContact</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>UserProfileController</servlet-name>
   	<url-pattern>/userProfile</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>SearchContactsController</servlet-name>
   	<url-pattern>/searchContacts</url-pattern>
