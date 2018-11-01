@@ -28,7 +28,7 @@
 			</header>
 			
 			<main>
-			<form action="addContact" method="post">
+			<form action="${requestScope.urlPattern}" method="post">
 				<fieldset id="additionalInfo">
 				
 					<legend>Contact Info</legend>
