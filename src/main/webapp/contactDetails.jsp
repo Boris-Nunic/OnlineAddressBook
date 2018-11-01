@@ -22,9 +22,9 @@
 				<h1 id="pageTitle">Online Address Book</h1>
 		
 				<nav>
-					<a href="contacts.html">My Contacts</a>
-					<a href="info.html">My Profile</a>
-					<a href="index.html">Logout</a>
+					<a href=myContacts">My Contacts</a>
+					<a href="userProfile">My Profile</a>
+					<a href="logout">Logout</a>
 				</nav>
 			
 			</header>
