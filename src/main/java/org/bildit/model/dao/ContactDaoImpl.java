@@ -93,14 +93,14 @@ public class ContactDaoImpl implements ContactDaoInterface {
 		Contact contact = null;
 		List<Contact> contacts = null;
 		ResultSet rs = null;
-		
+
 		try {
 			PreparedStatement ps = connection.prepareStatement(SqlQuery);
 			ps.setInt(1, userId);
 			rs = ps.executeQuery();
 			contacts = new ArrayList<>();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				contact = new Contact();
 				contact.setId(rs.getInt("contacts_id"));
 				contact.getPersonalInfo().setFirstName(rs.getString("first_name"));
@@ -116,7 +116,40 @@ public class ContactDaoImpl implements ContactDaoInterface {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return contacts;
+	}
+
+	@Override
+	public Contact getContact(Integer contactId, Integer userId) {
+
+		String query = "SELECT * FROM online_address_book.contacts WHERE contacts_id = ? AND user_id = ?";
+		Contact contact = null;
+		ResultSet rs = null;
+
+		try {
+			PreparedStatement ps = connection.prepareStatement(query);
+			ps.setInt(1, contactId);
+			ps.setInt(2, userId);
+			rs = ps.executeQuery();
+
+			if (rs.next()) {
+				contact = new Contact();
+				contact.setId(rs.getInt("contacts_id"));
+				contact.getPersonalInfo().setFirstName(rs.getString("first_name"));
+				contact.getPersonalInfo().setSurname(rs.getString("surname"));
+				contact.getPersonalInfo().setPhoneNumber(rs.getString("phone_number"));
+				contact.getPersonalInfo().setDob(rs.getDate("dob"));
+				contact.getAddress().setEmail(rs.getString("email"));
+				contact.getAddress().setStreetAddress(rs.getString("street_address"));
+				contact.getAddress().setCity(rs.getString("city"));
+				contact.getAddress().setStreetAddress(rs.getString("street_address"));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return contact;
 	}
 }
