@@ -38,4 +38,19 @@ public class ContactService {
 		Contact contact = contactDao.getContact(contactId, userId);
 		return contact;
 	}
+	
+	public static String removeContact(String contactId) {
+		String message = null;
+		Integer rowsAffected = contactDao.removeContact(Integer.parseInt(contactId));
+		
+		if(rowsAffected != 1) {
+			message = "Something went wrong, please try again";
+		}
+		
+		else {
+			message = "Contact removed successfully";
+		}
+		
+		return message;
+	}
 }
