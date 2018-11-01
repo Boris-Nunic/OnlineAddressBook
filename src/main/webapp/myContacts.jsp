@@ -56,8 +56,16 @@
 						<td>${contact.personalInfo.firstName}</td>
 						<td>${contact.personalInfo.surname}</td>
 						<td>${contact.personalInfo.phoneNumber}</td>
-						<td><input class="contactTableButton" type="button" value="details" /></td>
-						<td><input class="contactTableButton" type="button" value="delete" /></td>
+						<td>
+							<form action="contactDetails" method="get">
+								<button class="contactTableButton" name="contactId" value="${contact.id}">Details</button>
+							</form>
+						</td>
+						<td>
+							<form action="">
+								<button class="contactTableButton" name="contactId"value="${contact.id}">Delete</button>
+							</form>
+						</td>
 					</tr>
 					</c:forEach>
 					

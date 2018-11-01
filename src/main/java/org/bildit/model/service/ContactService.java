@@ -34,4 +34,8 @@ public class ContactService {
 		return contacts;
 	}
 
+	public static Contact getContact(Integer contactId, Integer userId) {
+		Contact contact = contactDao.getContact(contactId, userId);
+		return contact;
+	}
 }
