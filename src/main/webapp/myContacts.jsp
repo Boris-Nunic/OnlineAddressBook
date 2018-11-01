@@ -57,13 +57,13 @@
 						<td>${contact.personalInfo.surname}</td>
 						<td>${contact.personalInfo.phoneNumber}</td>
 						<td>
-							<form action="">
-								<button class="contactTableButton" value="${requestScope.contact.id}">Details</button>
+							<form action="contactDetails" method="get">
+								<button class="contactTableButton" name="contactId" value="${contact.id}">Details</button>
 							</form>
 						</td>
 						<td>
 							<form action="">
-								<button class="contactTableButton" value="${requestScope.contact.id}">Delete</button>
+								<button class="contactTableButton" name="contactId"value="${contact.id}">Delete</button>
 							</form>
 						</td>
 					</tr>
