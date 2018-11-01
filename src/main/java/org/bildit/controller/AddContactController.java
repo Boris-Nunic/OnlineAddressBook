@@ -22,6 +22,8 @@ public class AddContactController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String urlPattern = "addContact";
+		request.setAttribute("urlPattern", urlPattern);
 		request.getRequestDispatcher("addContact.jsp").forward(request, response);
 	}
 
