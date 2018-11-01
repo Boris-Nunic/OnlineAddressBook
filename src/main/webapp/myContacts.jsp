@@ -58,12 +58,12 @@
 						<td>${contact.personalInfo.phoneNumber}</td>
 						<td>
 							<form action="">
-								<button class="contactTableButton" value="" >Details</button>
+								<button class="contactTableButton" value="${requestScope.contact.id}">Details</button>
 							</form>
 						</td>
 						<td>
 							<form action="">
-								<button class="contactTableButton" value="" >Delete</button>
+								<button class="contactTableButton" value="${requestScope.contact.id}">Delete</button>
 							</form>
 						</td>
 					</tr>
