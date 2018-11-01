@@ -41,9 +41,18 @@ public class ContactDaoImpl implements ContactDaoInterface {
 	}
 
 	@Override
-	public Integer removeContact(Integer ContactId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Integer removeContact(Integer contactId) {
+		String query = "DELETE FROM online_address_book.contacts WHERE contacts_id = ?";
+		Integer rowsAffected = -1;
+		
+		try {
+			PreparedStatement ps = connection.prepareStatement(query);
+			ps.setInt(1, contactId);
+			rowsAffected = ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rowsAffected;
 	}
 
 	@Override

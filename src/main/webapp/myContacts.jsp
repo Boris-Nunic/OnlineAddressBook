@@ -30,7 +30,7 @@
 		
 			<main>
 				<div class="message">
-					<c:out value="${requestScope.addContactMessage}"></c:out>
+					<c:out value="${requestScope.message}"></c:out>
 				</div>
 				
 				<div class="search">
@@ -62,7 +62,7 @@
 							</form>
 						</td>
 						<td>
-							<form action="">
+							<form action="deleteContact" method="post">
 								<button class="contactTableButton" name="contactId"value="${contact.id}">Delete</button>
 							</form>
 						</td>
