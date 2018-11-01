@@ -124,12 +124,12 @@
 					<tr>
 						<td>
 							<form action="" method="">
-								<button>Edit</button>
+								<button name="contactId" value="">Edit</button>
 							</form>							
 						</td>
 						<td>
-							<form action="" method="">
-								<button>Delete</button>
+							<form action="deleteContact" method="post">
+								<button name="contactId" value="${requestScope.contact.id}">Delete</button>
 							</form>
 						</td>
 					</tr>

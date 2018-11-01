@@ -8,7 +8,7 @@ public interface ContactDaoInterface {
 
 	public Integer addContact(Contact contact, Integer userId);
 	
-	public Integer removeContact(Integer ContactId);
+	public Integer removeContact(Integer contactId);
 	
 	public Integer editContact(Contact contact);
 	
