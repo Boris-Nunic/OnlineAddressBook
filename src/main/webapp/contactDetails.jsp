@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
+<%@page isELIgnored="false"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <html lang="en">
 
 	<head>
-	
 		<title>Online Address Book</title>
 		<link href="css/styles.css" type="text/css" rel="stylesheet"/>
-		
-	
 	</head>
 	
 	<body>
@@ -25,7 +25,6 @@
 					<a href="contacts.html">My Contacts</a>
 					<a href="info.html">My Profile</a>
 					<a href="index.html">Logout</a>
-					<!-- <a href="index.html">Delete Profile</a> -->
 				</nav>
 			
 			</header>
@@ -44,10 +43,12 @@
 				<table id="profileInfo">
 					<tr>
 						<td>
-							<span class="fields">First Name:</span>
+							<span class="fields">First Name</span>
 						</td>
 						<td>
-							<span class="userInfo">Some</span>
+							<span class="userInfo">
+								<c:out value="${requestScope.contact.personalInfo.firstName}"></c:out>
+							</span>
 						</td>
 					</tr>
 					<tr>
@@ -55,7 +56,9 @@
 							<span class="fields">Surname:</span>
 						</td>
 						<td>
-							<span class="userInfo">Bloke</span>
+							<span class="userInfo">
+								<c:out value="${requestScope.contact.personalInfo.surname}"></c:out>
+							</span>
 						</td>
 					</tr>
 					<tr>
@@ -63,7 +66,19 @@
 							<span class="fields">Date of Birth:</span>
 						</td>
 						<td>
-							<span class="userInfo">1/1/1111</span>
+							<span class="userInfo">
+								<c:out value="${requestScope.contact.personalInfo.dob}"></c:out>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="fields">Phone Number</span>
+						</td>
+						<td>
+							<span class="userInfo">
+								<c:out value="${requestScope.contact.personalInfo.phoneNumber}"></c:out>
+							</span>
 						</td>
 					</tr>
 					<tr>
@@ -71,7 +86,9 @@
 							<span class="fields">E-mail:</span>
 						</td>
 						<td>
-							<span class="userInfo">something@somthing.com</span>
+							<span class="userInfo">
+								<c:out value="${requestScope.contact.address.email}"></c:out>
+							</span>
 						</td>
 					</tr>
 					<tr>
@@ -79,7 +96,9 @@
 							<span class="fields">Street:</span>
 						</td>
 						<td>
-							<span class="userInfo">Street and Number</span>
+							<span class="userInfo">
+								<c:out value="${requestScope.contact.address.streetAddress}"></c:out>
+							</span>
 						</td>
 					</tr>
 					<tr>
@@ -87,7 +106,9 @@
 							<span class="fields">City:</span>
 						</td>
 						<td>
-							<span class="userInfo">Awsome City</span>
+							<span class="userInfo">
+								<c:out value="${requestScope.contact.address.city}"></c:out>
+							</span>
 						</td>
 					</tr>
 					<tr>
@@ -95,7 +116,9 @@
 							<span class="fields">Country:</span>
 						</td>
 						<td>
-							<span class="userInfo">Terrific Country</span>
+							<span class="userInfo">
+								<c:out value="${requestScope.contact.address.country}"></c:out>
+							</span>
 						</td>
 					</tr>
 					<tr>
