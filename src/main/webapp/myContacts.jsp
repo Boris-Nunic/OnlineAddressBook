@@ -62,7 +62,7 @@
 							</form>
 						</td>
 						<td>
-							<form action="">
+							<form action="deleteContact" method="post">
 								<button class="contactTableButton" name="contactId"value="${contact.id}">Delete</button>
 							</form>
 						</td>
