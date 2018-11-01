@@ -30,7 +30,7 @@
 		
 			<main>
 				<div class="message">
-					<c:out value="${requestScope.addContactMessage}"></c:out>
+					<c:out value="${requestScope.message}"></c:out>
 				</div>
 				
 				<div class="search">

@@ -128,11 +128,18 @@
   	<description></description>
   	<servlet-class>org.bildit.controller.SearchContactsController</servlet-class>
   </servlet>
+  
   <servlet>
   	<servlet-name>ContactDetailsController</servlet-name>
   	<display-name>ContactDetailsController</display-name>
   	<description></description>
   	<servlet-class>org.bildit.controller.ContactDetailsController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteContactController</servlet-name>
+  	<display-name>DeleteContactController</display-name>
+  	<description></description>
+  	<servlet-class>org.bildit.controller.DeleteContactController</servlet-class>
   </servlet>
   
   <servlet-mapping>
@@ -187,5 +194,9 @@
   <servlet-mapping>
   	<servlet-name>ContactDetailsController</servlet-name>
   	<url-pattern>/contactDetails</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteContactController</servlet-name>
+  	<url-pattern>/deleteContact</url-pattern>
   </servlet-mapping>
 </web-app>

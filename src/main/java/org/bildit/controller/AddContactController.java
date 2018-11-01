@@ -56,7 +56,7 @@ public class AddContactController extends HttpServlet {
 		User user = (User)(request.getSession().getAttribute("user"));
 		
 		String addContactMessage = ContactService.addContact(contact, user.getId());
-		request.setAttribute("addContactMessage", addContactMessage);
+		request.setAttribute("message", addContactMessage);
 		
 		request.getRequestDispatcher("myContacts").forward(request, response);
 		
