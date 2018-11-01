@@ -24,12 +24,6 @@ public class UserAuthenticationFilter implements Filter {
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see Filter#destroy()
-	 */
-	public void destroy() {
-		// TODO Auto-generated method stub
-	}
 
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
@@ -50,13 +44,6 @@ public class UserAuthenticationFilter implements Filter {
 			chain.doFilter(request, response);
 		}
 
-	}
-
-	/**
-	 * @see Filter#init(FilterConfig)
-	 */
-	public void init(FilterConfig fConfig) throws ServletException {
-		// TODO Auto-generated method stub
 	}
 
 }
