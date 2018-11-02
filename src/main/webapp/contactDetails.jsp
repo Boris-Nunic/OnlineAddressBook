@@ -123,8 +123,8 @@
 					</tr>
 					<tr>
 						<td>
-							<form action="" method="">
-								<button name="contactId" value="">Edit</button>
+							<form action="editContact" method="get">
+								<button name="contactId" value="${requestScope.contact.id}">Edit</button>
 							</form>							
 						</td>
 						<td>

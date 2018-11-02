@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.bildit.model.entities.Contact;
+import org.bildit.model.entities.User;
 import org.bildit.model.service.ContactService;
 
 /**
@@ -20,9 +21,14 @@ public class EditContactController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String urlPattern = "editContact";
-		request.setAttribute("urlPattern", urlPattern);
-		request.getRequestDispatcher("addContact.jsp").forward(request, response);
+		Integer contactId = Integer.parseInt(request.getParameter("contactId"));
+		User user = (User)request.getSession().getAttribute("user");
+		Contact contact = ContactService.getContact(contactId, user.getId());
 		
+		request.getSession().setAttribute("contactId", contactId);
+		request.setAttribute("contact", contact);
+		request.setAttribute("urlPattern", urlPattern);
+		request.getRequestDispatcher("addContact.jsp").forward(request, response);		
 	}
 
 	/**
@@ -38,7 +44,7 @@ public class EditContactController extends HttpServlet {
 		String city = request.getParameter("city");
 		String country = request.getParameter("country");
 		String dob = request.getParameter("dob");
-		Integer id = Integer.parseInt(request.getParameter("contactId"));
+		Integer id =(Integer)request.getSession().getAttribute("contactId");
 		
 		Contact contact = new Contact();
 		
@@ -57,6 +63,7 @@ public class EditContactController extends HttpServlet {
 		
 		String message = ContactService.editContact(contact);
 		
+		request.getSession().removeAttribute("contactId");
 		request.setAttribute("message", message);
 		request.getRequestDispatcher("myContacts").forward(request, response);
 	}
