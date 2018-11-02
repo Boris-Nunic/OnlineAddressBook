@@ -28,49 +28,49 @@
 			</header>
 			
 			<main>
-			<form action="addContact" method="post">
+			<form action="${requestScope.urlPattern}" method="post">
 				<fieldset id="additionalInfo">
 				
 					<legend>Contact Info</legend>
 					
 					<div>
 					<label>First Name:
-						<input type="text" name="firstName" /><br />
+						<input type="text" name="firstName" value="${requestScope.contact.personalInfo.firstName}"/><br />
 					</label>
 					</div>
 					<div>
 					<label>Surname:
-						<input type="text" name="surname" />
+						<input type="text" name="surname" value="${requestScope.contact.personalInfo.surname}"/>
 					</label>
 					</div>
 					<div>
 					<label>E-mail:
-						<input type="email" name="email" />
+						<input type="email" name="email" value="${requestScope.contact.address.email}"/>
 					</label>
 					</div>
 					<div>
 					<label>Phone Number:
-						<input type="tel" name="phoneNumber" />
+						<input type="tel" name="phoneNumber" value="${requestScope.contact.personalInfo.phoneNumber}"/>
 					</label>
 					</div>
 					<div>
 					<label>Street Address:
-						<input type="text" name="streetAddress" />
+						<input type="text" name="streetAddress" value="${requestScope.contact.address.streetAddress}"/>
 					</label>
 					</div>
 					<div>
 					<label>City:
-						<input type="text" name="city" />
+						<input type="text" name="city" value="${requestScope.contact.address.city}"/>
 					</label>
 					</div>
 					<div>
 					<label>Country:
-						<input type="text" name="country" />
+						<input type="text" name="country" value="${requestScope.contact.address.country}"/>
 					</label>
 					</div>
 					<div>
 					<label>Date of Birth:
-						<input type="date" name="dob" />
+						<input type="date" name="dob" value="${requestScope.contact.personalInfo.dob}"/>
 					</label>
 					</div>
 					<div>

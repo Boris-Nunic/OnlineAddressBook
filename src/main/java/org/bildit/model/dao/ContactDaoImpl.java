@@ -44,7 +44,7 @@ public class ContactDaoImpl implements ContactDaoInterface {
 	public Integer removeContact(Integer contactId) {
 		String query = "DELETE FROM online_address_book.contacts WHERE contacts_id = ?";
 		Integer rowsAffected = -1;
-		
+
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);
 			ps.setInt(1, contactId);
@@ -57,8 +57,32 @@ public class ContactDaoImpl implements ContactDaoInterface {
 
 	@Override
 	public Integer editContact(Contact contact) {
-		// TODO Auto-generated method stub
-		return null;
+
+		String sqlQuery = "UPDATE contacts SET first_name = ?, surname = ?, dob = ?, phone_number = ?"
+				+ ", email = ?, street_address = ?, city = ?, country = ? WHERE contacts_id = ?";
+		Integer rowsAffected = -1;
+		
+		try {
+			PreparedStatement ps = connection.prepareStatement(sqlQuery);
+			
+			ps.setString(1, contact.getPersonalInfo().getFirstName());
+			ps.setString(2, contact.getPersonalInfo().getSurname());
+			ps.setDate(3, contact.getPersonalInfo().getDob());
+			ps.setString(4, contact.getPersonalInfo().getPhoneNumber());
+			ps.setString(5, contact.getAddress().getEmail());
+			ps.setString(6, contact.getAddress().getStreetAddress());
+			ps.setString(7, contact.getAddress().getCity());
+			ps.setString(8, contact.getAddress().getCountry());
+			ps.setInt(9, contact.getId());
+			
+			rowsAffected = ps.executeUpdate();
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+		return rowsAffected;
 	}
 
 	@Override

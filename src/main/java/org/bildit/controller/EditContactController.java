@@ -13,18 +13,22 @@ import org.bildit.model.entities.User;
 import org.bildit.model.service.ContactService;
 
 /**
- * Servlet implementation class AddContactController
+ * Servlet implementation class EditContactController
  */
-public class AddContactController extends HttpServlet {
+public class EditContactController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String urlPattern = "addContact";
+		String urlPattern = "editContact";
+		Integer contactId = Integer.parseInt(request.getParameter("contactId"));
+		User user = (User)request.getSession().getAttribute("user");
+		Contact contact = ContactService.getContact(contactId, user.getId());
+		
+		request.getSession().setAttribute("contactId", contactId);
+		request.setAttribute("contact", contact);
 		request.setAttribute("urlPattern", urlPattern);
-		request.getRequestDispatcher("addContact.jsp").forward(request, response);
+		request.getRequestDispatcher("addContact.jsp").forward(request, response);		
 	}
 
 	/**
@@ -40,6 +44,7 @@ public class AddContactController extends HttpServlet {
 		String city = request.getParameter("city");
 		String country = request.getParameter("country");
 		String dob = request.getParameter("dob");
+		Integer id =(Integer)request.getSession().getAttribute("contactId");
 		
 		Contact contact = new Contact();
 		
@@ -47,6 +52,7 @@ public class AddContactController extends HttpServlet {
 			contact.getPersonalInfo().setDob(Date.valueOf(dob));
 		}
 		
+		contact.setId(id);
 		contact.getPersonalInfo().setFirstName(firstName);
 		contact.getPersonalInfo().setSurname(surname);
 		contact.getPersonalInfo().setPhoneNumber(phoneNumber);
@@ -55,14 +61,11 @@ public class AddContactController extends HttpServlet {
 		contact.getAddress().setCity(city);
 		contact.getAddress().setCountry(country);
 		
-		User user = (User)(request.getSession().getAttribute("user"));
+		String message = ContactService.editContact(contact);
 		
-		String addContactMessage = ContactService.addContact(contact, user.getId());
-		request.setAttribute("message", addContactMessage);
-		
+		request.getSession().removeAttribute("contactId");
+		request.setAttribute("message", message);
 		request.getRequestDispatcher("myContacts").forward(request, response);
-		
-		
 	}
 
 }
