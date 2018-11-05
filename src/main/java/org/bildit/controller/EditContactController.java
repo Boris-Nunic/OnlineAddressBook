@@ -22,8 +22,8 @@ public class EditContactController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String urlPattern = "editContact";
 		Integer contactId = Integer.parseInt(request.getParameter("contactId"));
-		User user = (User)request.getSession().getAttribute("user");
-		Contact contact = ContactService.getContact(contactId, user.getId());
+		Integer userId = (Integer)request.getSession().getAttribute("userId");
+		Contact contact = ContactService.getContact(contactId, userId);
 		
 		request.getSession().setAttribute("contactId", contactId);
 		request.setAttribute("contact", contact);

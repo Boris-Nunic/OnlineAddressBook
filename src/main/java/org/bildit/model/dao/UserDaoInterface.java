@@ -9,7 +9,7 @@ public interface UserDaoInterface {
 
 	int addUser(User user) throws SQLException;
 	
-	User getUser(String email);
+	User getUser(Integer userId);
 	
 	int editUser(User user);
 	

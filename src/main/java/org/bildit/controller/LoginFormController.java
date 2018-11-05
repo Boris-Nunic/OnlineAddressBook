@@ -23,18 +23,20 @@ public class LoginFormController extends HttpServlet {
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		User user = UserService.login(email, password);
+		Integer userId = UserService.login(email, password);
 		
-		if(user.getMessage() != null) {
-			request.setAttribute("loginMessage", user.getMessage());
-			request.getRequestDispatcher("loginRegister").forward(request, response);
-		}
+		//if(userId != null) {
+			request.getSession().setAttribute("userId", userId);
+			response.sendRedirect("userProfile");
+	//	}
 		
-		else {
-			HttpSession session = request.getSession();
-			session.setAttribute("user", user);
-			request.getRequestDispatcher("userProfile").forward(request, response);
-		}
+//		else {
+//			String message = "Email or password is worong, try again";
+//			request.getSession().setAttribute("message", message);
+////			HttpSession session = request.getSession();
+////			session.setAttribute("user", user);
+//			response.sendRedirect("loginRegister");
+//		}
 	}
 
 }

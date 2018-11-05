@@ -23,8 +23,8 @@ public class ContactDetailsController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Integer contactId =Integer.parseInt(request.getParameter("contactId"));
-		User user = (User) request.getSession().getAttribute("user");
-		Contact contact = ContactService.getContact(contactId, user.getId());
+		Integer userId = (Integer) request.getSession().getAttribute("userId");
+		Contact contact = ContactService.getContact(contactId, userId);
 		request.setAttribute("contact", contact);
 		request.getRequestDispatcher("contactDetails.jsp").forward(request, response);
 	}

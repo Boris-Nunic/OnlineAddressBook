@@ -42,35 +42,42 @@ public class UserService {
 	}
 
 	// Login logic
-	public static User login(String email, String password) {
+	public static Integer login(String email, String password) {
 
-		String message = null;
+//		String message = null;
 		String encryptedPassword = null;
-		User user = userDao.getUser(email);
-		
-		if(user == null) {
-			user = new User();
-			message = "Provided e-mail address or password is not valid";
-			user.setMessage(message);
-			return user;
-		}
-		
 		try {
 			encryptedPassword = EncryptionService.encryptPassword(password);
 		} catch (Exception e) {
-			message = "Somthing went wrong. Please try again";
-			user.setMessage(message);
-			return user;
-		}
-
-		if (user == null || !user.getPassword().equals(encryptedPassword)) {
-			message = "Provided e-mail address or password is not valid";
-			user.setMessage(message);
-			return user;
+			e.printStackTrace();
+//			message = "Somthing went wrong. Please try again";
+//			user.setMessage(message);
+//			return user;
 		}
 		
-		user.setPassword(null);
-		return user;
+		System.out.println(encryptedPassword);
+		
+		Integer userId = userDao.validateUser(email, encryptedPassword);
+		
+		return userId;
+		
+//		if(user == null) {
+//			user = new User();
+//			message = "Provided e-mail address or password is not valid";
+//			user.setMessage(message);
+//			return user;
+//		}
+//		
+//		
+//
+//		if (user == null || !user.getPassword().equals(encryptedPassword)) {
+//			message = "Provided e-mail address or password is not valid";
+//			user.setMessage(message);
+//			return user;
+//		}
+//		
+//		user.setPassword(null);
+//		return user;
 	}
 	
 	//Edit profile logic
@@ -93,5 +100,11 @@ public class UserService {
 			return message;
 		}
 		return message;
+	}
+	
+	// Get user's info
+	public static User getUserInfo(Integer userId) {
+		User user = userDao.getUser(userId);
+		return user;
 	}
 }

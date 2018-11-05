@@ -19,12 +19,14 @@ public class SearchContactsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String searchQuery = request.getParameter("searchQuery");
-		User user = (User)request.getSession().getAttribute("user");
-		ArrayList<Contact> contacts = ContactService.searchContacts(searchQuery, user.getId());
+		Integer userId = (Integer) request.getSession().getAttribute("userId");
+		ArrayList<Contact> contacts = ContactService.searchContacts(searchQuery, userId);
 		request.setAttribute("contacts", contacts);
 		request.getRequestDispatcher("myContacts.jsp").forward(request, response);
 	}

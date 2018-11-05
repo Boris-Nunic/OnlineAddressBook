@@ -24,8 +24,8 @@ public class MyContactsController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		User user = (User)request.getSession().getAttribute("user");
-		ArrayList<Contact> contacts = ContactService.getAllContacts(user.getId());
+		Integer userId = (Integer)request.getSession().getAttribute("userId");
+		ArrayList<Contact> contacts = ContactService.getAllContacts(userId);
 		String message = (String)request.getSession().getAttribute("message");
 		request.getSession().removeAttribute("message");
 		request.setAttribute("message", message);
