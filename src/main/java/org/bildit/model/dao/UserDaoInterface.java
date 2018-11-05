@@ -17,6 +17,6 @@ public interface UserDaoInterface {
 	
 	List<User> getUsers();
 	
-	
+	Integer validateUser(String email, String password);
 	
 }
