@@ -20,8 +20,8 @@ public class DeleteContactController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String contactId = request.getParameter("contactId");
 		String message = ContactService.removeContact(contactId);
-		request.setAttribute("message", message);
-		request.getRequestDispatcher("myContacts").forward(request, response);
+		request.getSession().setAttribute("message", message);
+		response.sendRedirect("myContacts");
 	}
 
 }
