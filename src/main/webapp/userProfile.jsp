@@ -49,7 +49,7 @@
 							<span class="fields">First Name:</span>
 						</td>
 						<td>
-							<span class="userInfo"><c:out value="${sessionScope.user.personalInfo.firstName}"></c:out></span>
+							<span class="userInfo"><c:out value="${requestScope.user.personalInfo.firstName}"></c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -57,7 +57,7 @@
 							<span class="fields">Surname:</span>
 						</td>
 						<td>
-							<span class="userInfo"><c:out value="${sessionScope.user.personalInfo.surname}"></c:out></span>
+							<span class="userInfo"><c:out value="${requestScope.user.personalInfo.surname}"></c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -65,7 +65,7 @@
 							<span class="fields">Date of Birth:</span>
 						</td>
 						<td>
-							<span class="userInfo"><c:out value="${sessionScope.user.personalInfo.dob}"></c:out></span>
+							<span class="userInfo"><c:out value="${requestScope.user.personalInfo.dob}"></c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -73,7 +73,7 @@
 							<span class="fields">Phone Number</span>
 						</td>
 						<td>
-							<span class="userInfo"><c:out value="${sessionScope.user.personalInfo.phoneNumber}"></c:out></span>
+							<span class="userInfo"><c:out value="${requestScope.user.personalInfo.phoneNumber}"></c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -81,7 +81,7 @@
 							<span class="fields">E-mail:</span>
 						</td>
 						<td>
-							<span class="userInfo"><c:out value="${sessionScope.user.address.email}"></c:out></span>
+							<span class="userInfo"><c:out value="${requestScope.user.address.email}"></c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -89,7 +89,7 @@
 							<span class="fields">Street:</span>
 						</td>
 						<td>
-							<span class="userInfo"><c:out value="${sessionScope.user.address.streetAddress}"></c:out></span>
+							<span class="userInfo"><c:out value="${requestScope.user.address.streetAddress}"></c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -97,7 +97,7 @@
 							<span class="fields">City:</span>
 						</td>
 						<td>
-							<span class="userInfo"><c:out value="${sessionScope.user.address.city}"></c:out></span>
+							<span class="userInfo"><c:out value="${requestScope.user.address.city}"></c:out></span>
 						</td>
 					</tr>
 					<tr>
@@ -105,7 +105,7 @@
 							<span class="fields">Country:</span>
 						</td>
 						<td>
-							<span class="userInfo"><c:out value="${sessionScope.user.address.country}"></c:out></span>
+							<span class="userInfo"><c:out value="${requestScope.user.address.country}"></c:out></span>
 						</td>
 					</tr>
 <!-- 					<tr> -->
