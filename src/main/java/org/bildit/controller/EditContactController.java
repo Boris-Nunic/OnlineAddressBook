@@ -64,8 +64,8 @@ public class EditContactController extends HttpServlet {
 		String message = ContactService.editContact(contact);
 		
 		request.getSession().removeAttribute("contactId");
-		request.setAttribute("message", message);
-		request.getRequestDispatcher("myContacts").forward(request, response);
+		request.getSession().setAttribute("message", message);
+		response.sendRedirect("myContacts");
 	}
 
 }
