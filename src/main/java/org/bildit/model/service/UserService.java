@@ -102,7 +102,7 @@ public class UserService {
 		return message;
 	}
 	
-	// Get profile info
+	// Get user's info
 	public static User getUserInfo(Integer userId) {
 		User user = userDao.getUser(userId);
 		return user;
