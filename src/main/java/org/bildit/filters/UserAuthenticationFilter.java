@@ -31,8 +31,10 @@ public class UserAuthenticationFilter implements Filter {
 			throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
-		User user = (User) request.getSession().getAttribute("user");
-		if (user == null) {
+		Integer userId = (Integer) request.getSession().getAttribute("userId");
+		if ( userId == null) {
+			String message = "The credentials are incorrect, please enter corrctrct credetials";
+			request.getSession().setAttribute("message", message);
 			response.sendRedirect("loginRegister");
 		}
 
