@@ -39,17 +39,17 @@ public class UserDaoImpl implements UserDaoInterface {
 	}
 
 	@Override
-	public User getUser(String email) {
+	public User getUser(Integer userId) {
 
-		String query = "SELECT * FROM users WHERE email=?";
+		String sqlQuery = "SELECT * FROM users WHERE user_id = ?";
 		User user = null;
 
 		try {
-			PreparedStatement ps = connection.prepareStatement(query);
-			ps.setString(1, email);
+			PreparedStatement ps = connection.prepareStatement(sqlQuery);
+			ps.setInt(1, userId);
 			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				user = new User(rs.getString("email"), rs.getString("password"));
+			if (rs.next()) {
+				user = new User(rs.getString("email"), null);
 				user.setId(rs.getInt("user_id"));
 				user.getPersonalInfo().setFirstName(rs.getString("first_name"));
 				user.getPersonalInfo().setSurname(rs.getString("surname"));
@@ -118,7 +118,7 @@ public class UserDaoImpl implements UserDaoInterface {
 	public Integer validateUser(String email, String password) {
 	
 		Integer userId = null;
-		String sqlQuery="SELECT * FORM online_address_book.user WHERE email = ? and password = ?";
+		String sqlQuery="SELECT * FROM online_address_book.users WHERE email = ? and password = ?";
 		ResultSet rs = null;
 		
 		try {
