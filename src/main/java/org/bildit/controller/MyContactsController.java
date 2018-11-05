@@ -26,13 +26,16 @@ public class MyContactsController extends HttpServlet {
 			throws ServletException, IOException {
 		User user = (User)request.getSession().getAttribute("user");
 		ArrayList<Contact> contacts = ContactService.getAllContacts(user.getId());
+		String message = (String)request.getSession().getAttribute("message");
+		request.getSession().removeAttribute("message");
+		request.setAttribute("message", message);
 		request.setAttribute("contacts", contacts);
 		request.getRequestDispatcher("myContacts.jsp").forward(request, response);
 	}
 	
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
+//	@Override
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		doGet(request, response);
+//	}
 
 }

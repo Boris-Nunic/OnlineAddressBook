@@ -114,4 +114,28 @@ public class UserDaoImpl implements UserDaoInterface {
 		return null;
 	}
 
+	@Override
+	public Integer validateUser(String email, String password) {
+	
+		Integer userId = null;
+		String sqlQuery="SELECT * FORM online_address_book.user WHERE email = ? and password = ?";
+		ResultSet rs = null;
+		
+		try {
+			PreparedStatement ps = connection.prepareStatement(sqlQuery);
+			ps.setString(1, email);
+			ps.setString(2, password);
+			
+			rs = ps.executeQuery();
+			
+			if (rs.next()) {
+				userId = rs.getInt("user_id");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return userId;
+	}
+
 }

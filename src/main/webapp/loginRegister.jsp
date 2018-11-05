@@ -47,7 +47,7 @@
 							
 							<input type="submit" value="Login" />
 							
-							<div class="message"><c:out value="${requestScope.loginMessage}"></c:out> </div>
+							<div class="message"><c:out value="${requestScope.message}"></c:out> </div>
 							
 					</fieldset>
 				</form>
@@ -73,7 +73,7 @@
 								<input type="password" name="repeatPassword" id="repeatPassword" />
 							</div>
 						<input type="submit" value="Register" />
-						<div class="message">${registrationMessage}</div>						
+						<div class="message"><c:out value="${requsetScope.message}"></c:out></div>						
 					</fieldset>
 				
 				</form>		
