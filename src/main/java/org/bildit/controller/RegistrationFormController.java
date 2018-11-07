@@ -24,7 +24,7 @@ public class RegistrationFormController extends HttpServlet {
 		String repeatPassword = request.getParameter("repeatPassword");
 		
 		String registrationMessage = UserService.registration(email, password, repeatPassword);
-		request.setAttribute("registrationMessage", registrationMessage);
+		request.setAttribute("message", registrationMessage);
 		
 		request.getRequestDispatcher("loginRegister.jsp").forward(request, response);
 	}
