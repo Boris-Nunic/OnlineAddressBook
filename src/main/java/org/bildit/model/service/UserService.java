@@ -55,7 +55,7 @@ public class UserService {
 //			return user;
 		}
 		
-		System.out.println(encryptedPassword);
+		
 		
 		Integer userId = userDao.validateUser(email, encryptedPassword);
 		
