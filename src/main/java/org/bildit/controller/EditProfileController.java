@@ -22,6 +22,14 @@ public class EditProfileController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Integer userId = (Integer)request.getSession().getAttribute("userId");
 		User user = UserService.getUserInfo(userId);
+		String editProfileMessage = (String)request.getSession().getAttribute("editProfileMessage");
+		
+		if(editProfileMessage != null) {
+			request.getSession().removeAttribute("editProfileMessage");
+			request.setAttribute("editProfileMessage", editProfileMessage);
+		}
+		
+		
 		request.setAttribute("user", user);
 		request.getRequestDispatcher("editProfile.jsp").forward(request, response);
 	}
@@ -34,7 +42,8 @@ public class EditProfileController extends HttpServlet {
 			throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		User user = (User) (session.getAttribute("user"));
+		Integer userId = (Integer)(session.getAttribute("userId"));
+		User user = UserService.getUserInfo(userId);
 
 		String firstName = request.getParameter("firstName");
 		String surname = request.getParameter("surname");
@@ -58,12 +67,12 @@ public class EditProfileController extends HttpServlet {
 		String editProfileMessage = UserService.editProfile(user);
 
 		if (editProfileMessage == null) {
-			request.getRequestDispatcher("userProfile.jsp").forward(request, response);
+			response.sendRedirect("userProfile");
 		}
 
 		else {
-			request.setAttribute("editProfileMessage", editProfileMessage);
-			request.getRequestDispatcher("editProfile.jsp").forward(request, response);
+			request.getSession().setAttribute("editProfileMessage", editProfileMessage);
+			response.sendRedirect("editProfile");
 		}
 
 	}
