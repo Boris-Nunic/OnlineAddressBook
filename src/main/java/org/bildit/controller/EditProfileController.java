@@ -19,8 +19,11 @@ public class EditProfileController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("editProfile.jsp").forward(req, resp);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Integer userId = (Integer)request.getSession().getAttribute("userId");
+		User user = UserService.getUserInfo(userId);
+		request.setAttribute("user", user);
+		request.getRequestDispatcher("editProfile.jsp").forward(request, response);
 	}
 
 	/**
