@@ -36,12 +36,12 @@
 					
 					<div>
 					<label>First Name:
-						<input type="text" name="firstName" value="${sessionScope.user.personalInfo.firstName}"/><br />
+						<input type="text" name="firstName" value="${requestScope.user.personalInfo.firstName}"/><br />
 					</label>
 					</div>
 					<div>
 					<label>Surname:
-						<input type="text" name="surname"  value="${sessionScope.user.personalInfo.surname}"/>
+						<input type="text" name="surname"  value="${requestScope.user.personalInfo.surname}"/>
 					</label>
 					</div>
 <!-- 					<div> -->
@@ -51,27 +51,27 @@
 <!-- 					</div> -->
 					<div>
 					<label>Phone Number:
-						<input type="tel" name="phoneNumber"  value="${sessionScope.user.personalInfo.phoneNumber}" />
+						<input type="tel" name="phoneNumber"  value="${requestScope.user.personalInfo.phoneNumber}" />
 					</label>
 					</div>
 					<div>
 					<label>Street Address:
-						<input type="text" name="streetAddress" value="${sessionScope.user.address.streetAddress}"/>
+						<input type="text" name="streetAddress" value="${requestScope.user.address.streetAddress}"/>
 					</label>
 					</div>
 					<div>
 					<label>City:
-						<input type="text" name="city" value="${sessionScope.user.address.city}"/>
+						<input type="text" name="city" value="${requestScope.user.address.city}"/>
 					</label>
 					</div>
 					<div>
 					<label>Country:
-						<input type="text" name="country" value="${sessionScope.user.address.country}"/>
+						<input type="text" name="country" value="${requestScope.user.address.country}"/>
 					</label>
 					</div>
 					<div>
 					<label>Date of Birth:
-						<input type="date" name="dob"  value="${sessionScope.user.personalInfo.dob}"/>
+						<input type="date" name="dob"  value="${requestScope.user.personalInfo.dob}"/>
 					</label>
 					</div>
 					<div>
