@@ -10,7 +10,7 @@ public class ConnectionManager {
 	private Connection connection = null;
 	
 	private static final String USERNAME = 	"root";
-	private static final String PASSWORD = "root";
+	private static final String PASSWORD = "toor";
 	private static final String CONN_STRING = "jdbc:mysql://localhost/online_address_book?useSSL=false&serverTimezone=UTC";
 
 	private ConnectionManager() {
