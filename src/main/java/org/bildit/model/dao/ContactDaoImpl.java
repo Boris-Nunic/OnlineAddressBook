@@ -42,7 +42,7 @@ public class ContactDaoImpl implements ContactDaoInterface {
 
 	@Override
 	public Integer removeContact(Integer contactId) {
-		String query = "DELETE FROM online_address_book.contacts WHERE contacts_id = ?";
+		String query = "DELETE FROM online_address_book.contacts WHERE contact_id = ?";
 		Integer rowsAffected = -1;
 
 		try {
@@ -59,7 +59,7 @@ public class ContactDaoImpl implements ContactDaoInterface {
 	public Integer editContact(Contact contact) {
 
 		String sqlQuery = "UPDATE contacts SET first_name = ?, surname = ?, dob = ?, phone_number = ?"
-				+ ", email = ?, street_address = ?, city = ?, country = ? WHERE contacts_id = ?";
+				+ ", email = ?, street_address = ?, city = ?, country = ? WHERE contact_id = ?";
 		Integer rowsAffected = -1;
 		
 		try {
@@ -100,7 +100,7 @@ public class ContactDaoImpl implements ContactDaoInterface {
 
 			while (rs.next()) {
 				contact = new Contact();
-				contact.setId(rs.getInt("contacts_id"));
+				contact.setId(rs.getInt("contact_id"));
 				contact.getPersonalInfo().setFirstName(rs.getString("first_name"));
 				contact.getPersonalInfo().setSurname(rs.getString("surname"));
 				contact.getPersonalInfo().setPhoneNumber(rs.getString("phone_number"));
@@ -135,7 +135,7 @@ public class ContactDaoImpl implements ContactDaoInterface {
 
 			while (rs.next()) {
 				contact = new Contact();
-				contact.setId(rs.getInt("contacts_id"));
+				contact.setId(rs.getInt("contact_id"));
 				contact.getPersonalInfo().setFirstName(rs.getString("first_name"));
 				contact.getPersonalInfo().setSurname(rs.getString("surname"));
 				contact.getPersonalInfo().setDob(rs.getDate("dob"));
@@ -156,7 +156,7 @@ public class ContactDaoImpl implements ContactDaoInterface {
 	@Override
 	public Contact getContact(Integer contactId, Integer userId) {
 
-		String query = "SELECT * FROM online_address_book.contacts WHERE contacts_id = ? AND user_id = ?";
+		String query = "SELECT * FROM online_address_book.contacts WHERE contact_id = ? AND user_id = ?";
 		Contact contact = null;
 		ResultSet rs = null;
 
@@ -168,7 +168,7 @@ public class ContactDaoImpl implements ContactDaoInterface {
 
 			if (rs.next()) {
 				contact = new Contact();
-				contact.setId(rs.getInt("contacts_id"));
+				contact.setId(rs.getInt("contact_id"));
 				contact.getPersonalInfo().setFirstName(rs.getString("first_name"));
 				contact.getPersonalInfo().setSurname(rs.getString("surname"));
 				contact.getPersonalInfo().setPhoneNumber(rs.getString("phone_number"));
