@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.bildit.model.entities.Contact;
@@ -24,7 +25,7 @@ public class ContactDaoImpl implements ContactDaoInterface {
 			ps.setString(1, contact.getPersonalInfo().getFirstName());
 			ps.setString(2, contact.getPersonalInfo().getSurname());
 			ps.setString(3, contact.getAddress().getEmail());
-			ps.setDate(4, contact.getPersonalInfo().getDob());
+			ps.setDate(4, contact.getPersonalInfo().getDob(), Calendar.getInstance());
 			ps.setString(5, contact.getPersonalInfo().getPhoneNumber());
 			ps.setString(6, contact.getAddress().getStreetAddress());
 			ps.setString(7, contact.getAddress().getCity());
@@ -67,7 +68,7 @@ public class ContactDaoImpl implements ContactDaoInterface {
 			
 			ps.setString(1, contact.getPersonalInfo().getFirstName());
 			ps.setString(2, contact.getPersonalInfo().getSurname());
-			ps.setDate(3, contact.getPersonalInfo().getDob());
+			ps.setDate(3, contact.getPersonalInfo().getDob(), Calendar.getInstance());
 			ps.setString(4, contact.getPersonalInfo().getPhoneNumber());
 			ps.setString(5, contact.getAddress().getEmail());
 			ps.setString(6, contact.getAddress().getStreetAddress());

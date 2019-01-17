@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
 import java.util.List;
 
 import org.bildit.model.entities.User;
@@ -26,7 +27,7 @@ public class UserDaoImpl implements UserDaoInterface {
 			ps.setString(3, user.getPersonalInfo().getSurname());
 			ps.setString(4, user.getAddress().getEmail());
 			ps.setString(5, user.getPersonalInfo().getPhoneNumber());
-			ps.setDate(6, user.getPersonalInfo().getDob());
+			ps.setDate(6, user.getPersonalInfo().getDob(), Calendar.getInstance());
 			ps.setString(7, user.getAddress().getStreetAddress());
 			ps.setString(8, user.getAddress().getCity());
 			ps.setString(9, user.getAddress().getCountry());
@@ -79,7 +80,7 @@ public class UserDaoImpl implements UserDaoInterface {
 			ps.setString(1, user.getPersonalInfo().getFirstName());
 			ps.setString(2, user.getPersonalInfo().getSurname());
 			ps.setString(3, user.getAddress().getEmail());
-			ps.setDate(4, user.getPersonalInfo().getDob());
+			ps.setDate(4, user.getPersonalInfo().getDob(), Calendar.getInstance());
 			ps.setString(5, user.getPersonalInfo().getPhoneNumber());
 			ps.setString(6, user.getAddress().getStreetAddress());
 			ps.setString(7, user.getAddress().getCity());
