@@ -140,6 +140,20 @@
 		<servlet-class>com.boris.controller.EditContactController</servlet-class>
 	</servlet>
 	
+	<servlet>
+		<servlet-name>index</servlet-name>
+		<jsp-file>/view/index.jsp</jsp-file>
+		<init-param>
+			<param-name>navBar</param-name>
+			<param-value>Register Login About_us</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>index</servlet-name>
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+	
 	<servlet-mapping>
 		<servlet-name>LoginRegisterController</servlet-name>
 		<url-pattern>/loginRegister</url-pattern>
