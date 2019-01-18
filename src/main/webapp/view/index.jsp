@@ -14,7 +14,7 @@
 	<c:import url="header.jsp">
 		
 	</c:import>
-	
+	<%=config.getInitParameter("navBar") %>
 
 	<main>
 	<article class="main-screen">

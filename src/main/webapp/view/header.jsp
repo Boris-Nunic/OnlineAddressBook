@@ -8,6 +8,6 @@
 	</figure>
 	<h1 class="main-headline">Online Address Book</h1>
 	<c:import url="nav.jsp" > 
-		<c:param name="navBar" value="${param.navbar}"/>
+		
 	</c:import>
 </header>
