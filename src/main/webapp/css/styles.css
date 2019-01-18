@@ -1,7 +1,6 @@
 body{
 	padding: 2px 2px;
 	min-width: 800px;
-	width: 100%;
 	height: 800px;
 }
 
@@ -177,7 +176,7 @@ th.last{
 	padding: 0;
 	width: 100%;
 	min-height: 450px;
-	background-image: url("../img/address.jpg");
+	background-image: url("../img/addressbook.jpg");
 }
 
 .main-screen-register{

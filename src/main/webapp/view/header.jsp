@@ -6,6 +6,6 @@
 		<img src="img/addressBookLogo.png" />
 		<figcaption hidden="true">Logo for onlline address book</figcaption>
 	</figure>
-	<h1 class="main_headline">Online Address Book</h1>
+	<h1 class="main-headline">Online Address Book</h1>
 	<c:import url="nav.jsp" />
 </header>
