@@ -116,11 +116,6 @@ fieldset>div{
 	margin: auto;
 }
 
-/* .search{
-	width: 50%;
-	margin: auto;
-} */
-
 .search{
 	width: 400px;
 	margin: auto;
@@ -140,17 +135,10 @@ button, input[type="submit"]{
 	border-radius: 10px;
 }
 
-/* .search-button{
-	font-size: 1.2em;
-	padding: 1%;
-	border-radius: 10px;
-} */
-
 table{
 	width: 49%;
 	margin: auto;
 	margin-top: 1.5%;
-/* border: 2px solid black; */
 	border-radius: 10px;
 }
 
@@ -158,14 +146,8 @@ tr.even{
 	background-color: #e5e49c;
 }
 
-/*tr.head{
-	border: 2px solid black;
-	background-color: green;
-} */
-
 th{
 	border-bottom: 2px solid black;
-	/* background-color: #efed73; */
 	background-color: #e5e49c;
 }
 
