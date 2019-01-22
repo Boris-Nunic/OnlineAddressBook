@@ -4,8 +4,8 @@
 
 <nav class="class">
 	<ul>
-		<c:forEach items="${param.homeNav}" var="link">
-		<li><a class="nav-link" href=""><c:out value="${link}" /></a></li>
+		<c:forEach items="${param.nav}" var="link">
+		<li><a class="nav-link" href="${link}"><c:out value="${link}" /></a></li>
 		</c:forEach>
 	</ul>
 </nav>
