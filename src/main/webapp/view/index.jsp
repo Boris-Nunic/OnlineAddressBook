@@ -11,10 +11,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:import url="header.jsp">
-		
+	
+	<c:import url="view/header.jsp">
+		<c:param name="homeNav" value="${requestScope.homeNav}"></c:param>
 	</c:import>
-	<%=config.getInitParameter("navBar") %>
 
 	<main>
 	<article class="main-screen">
@@ -81,7 +81,7 @@
 	</aside>
 	</main>
 
-	<c:import url="footer.jsp" />
+	<c:import url="view/footer.jsp" />
 
 </body>
 </html>

@@ -7,7 +7,7 @@
 		<figcaption hidden="true">Logo for onlline address book</figcaption>
 	</figure>
 	<h1 class="main-headline">Online Address Book</h1>
-	<c:import url="nav.jsp" > 
-		
+	<c:import url="view/nav.jsp" > 
+		<c:param name="homeNav" value="${param.homeNav}"></c:param>
 	</c:import>
 </header>

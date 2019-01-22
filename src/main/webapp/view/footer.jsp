@@ -3,5 +3,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <footer>
-	<c:import url="nav.jsp" />
+	<c:import url="view/nav.jsp" />
 </footer>
