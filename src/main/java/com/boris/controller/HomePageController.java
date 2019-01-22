@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(
 		urlPatterns = "/home",
-		initParams = @WebInitParam(name = "homeNav" , value="Login,Register,About us")
+		initParams = @WebInitParam(name = "homeNav" , value="login,register,about us")
 		)
 public class HomePageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
