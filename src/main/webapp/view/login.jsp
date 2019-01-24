@@ -26,7 +26,7 @@
 					class="input-field" id="password" type="password" name="" required />
 			</div>
 			<div>
-				<input type="submit" id="submit" value="Register" />
+				<input type="submit" id="submit" value="Login" />
 			</div>
 		</fieldset>
 	</article>
