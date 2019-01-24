@@ -15,7 +15,7 @@
 	</c:import>
 	<main>
 	<article>
-		<fieldset class="registration">
+		<fieldset>
 			<legend>Login</legend>
 			<div>
 				<label for="email" class="title">E-mail</label> <input
