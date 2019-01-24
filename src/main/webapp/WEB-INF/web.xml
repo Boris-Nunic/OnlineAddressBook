@@ -16,7 +16,7 @@
   </filter>
   <filter-mapping>
     <filter-name>UserAuthenticationFilter</filter-name>
-    <url-pattern>/userProfile</url-pattern>
+    <url-pattern>/profilePage</url-pattern>
   </filter-mapping>
   <filter-mapping>
     <filter-name>UserAuthenticationFilter</filter-name>
@@ -72,11 +72,6 @@
     <servlet-class>com.boris.controller.AddContactController</servlet-class>
   </servlet>
   <servlet>
-    <display-name>UserProfileController</display-name>
-    <servlet-name>UserProfileController</servlet-name>
-    <servlet-class>com.boris.controller.UserProfileController</servlet-class>
-  </servlet>
-  <servlet>
     <display-name>SearchContactsController</display-name>
     <servlet-name>SearchContactsController</servlet-name>
     <servlet-class>com.boris.controller.SearchContactsController</servlet-class>
@@ -96,6 +91,14 @@
     <servlet-name>EditContactController</servlet-name>
     <servlet-class>com.boris.controller.EditContactController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>profilePageJsp</servlet-name>
+  	<jsp-file>/view/profilePage.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>profilePageJsp</servlet-name>
+  	<url-pattern>/profilePage</url-pattern>
+  </servlet-mapping>
   <servlet>
     <servlet-name>index</servlet-name>
     <jsp-file>/view/index.jsp</jsp-file>
@@ -139,10 +142,6 @@
   <servlet-mapping>
     <servlet-name>AddContactController</servlet-name>
     <url-pattern>/addContact</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UserProfileController</servlet-name>
-    <url-pattern>/userProfile</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>SearchContactsController</servlet-name>

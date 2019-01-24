@@ -12,7 +12,7 @@
 
 <body>
 	<c:import url="view/header.jsp">
-		<c:param name="" />
+		<c:param name="nav" value="${requestScope.nav}"/>
 	</c:import>
 	<main>
 	<article class="user-info">
@@ -23,23 +23,23 @@
 		<button>Upload Image</button>
 		<div>
 			<div class="user-info-title">Name:</div>
-			<div class="user-info-value">Konjislav</div>
+			<div class="user-info-value"><c:out value="${requestScope.user.personalInfo.firstName}" /></div>
 		</div>
 		<div>
 			<div class="user-info-title">Surname:</div>
-			<div class="user-info-value">Konjina</div>
+			<div class="user-info-value"><c:out value="${requestScope.user.personalInfo.surname}"></c:out></div>
 		</div>
 		<div>
 			<div class="user-info-title">Phone:</div>
-			<div class="user-info-value">0190/868-686</div>
+			<div class="user-info-value"><c:out value="${requestScope.user.personalInfo.phoneNumber}"/></div>
 		</div>
 		<div>
 			<div class="user-info-title">City:</div>
-			<div class="user-info-value">Konjoville</div>
+			<div class="user-info-value"><c:out value="${requestScope.user.address.city}"></c:out></div>
 		</div>
 		<div>
 			<div class="user-info-title">Country:</div>
-			<div class="user-info-value">Konjara</div>
+			<div class="user-info-value"><c:out value="${requestSope.user.address.country}" /></div>
 		</div>
 	</article>
 	</main>

@@ -61,6 +61,7 @@ figure{
 }
 
 main{
+	padding-top: 5%;
 	width: 100%;
 	min-height: 800px;
 	background-color: #f8f9e3;
