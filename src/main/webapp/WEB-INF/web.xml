@@ -52,11 +52,6 @@
     <servlet-class>com.boris.controller.LoginRegisterController</servlet-class>
   </servlet>
   <servlet>
-    <display-name>RegistrationFormController</display-name>
-    <servlet-name>RegistrationFormController</servlet-name>
-    <servlet-class>com.boris.controller.RegistrationFormController</servlet-class>
-  </servlet>
-  <servlet>
     <display-name>EditProfileController</display-name>
     <servlet-name>EditProfileController</servlet-name>
     <servlet-class>com.boris.controller.EditProfileController</servlet-class>
@@ -114,6 +109,14 @@
   	<servlet-name>login</servlet-name>
   	<jsp-file>/view/login.jsp</jsp-file>
   </servlet>
+  <servlet>
+  	<servlet-name>registration</servlet-name>
+  	<jsp-file>/view/registration.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>registration</servlet-name>
+  	<url-pattern>/registrationPage</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>login</servlet-name>
   	<url-pattern>/loginPage</url-pattern>
@@ -125,10 +128,6 @@
   <servlet-mapping>
     <servlet-name>LoginRegisterController</servlet-name>
     <url-pattern>/loginRegister</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>RegistrationFormController</servlet-name>
-    <url-pattern>/registration</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>EditProfileController</servlet-name>
