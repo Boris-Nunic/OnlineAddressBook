@@ -25,7 +25,7 @@ public class HomePageController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ServletConfig config = getServletConfig();
-		request.setAttribute("homeNav", config.getInitParameter("homeNav"));
+		request.setAttribute("nav", config.getInitParameter("homeNav"));
 		request.getRequestDispatcher("index").forward(request, response);
 	}
 

@@ -13,7 +13,7 @@
 <body>
 	
 	<c:import url="view/header.jsp">
-		<c:param name="nav" value="${requestScope.homeNav}"></c:param>
+		<c:param name="nav" value="${requestScope.nav}"></c:param>
 	</c:import>
 
 	<main>

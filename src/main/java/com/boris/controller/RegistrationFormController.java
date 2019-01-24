@@ -30,7 +30,7 @@ public class RegistrationFormController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ServletConfig config = getServletConfig();
-		request.setAttribute("registrationNav", config.getInitParameter("registrationNav"));
+		request.setAttribute("nav", config.getInitParameter("registrationNav"));
 		request.getRequestDispatcher("registrationPage").forward(request, response);
 	}
 	

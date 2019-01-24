@@ -25,7 +25,7 @@ public class LoginFormController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ServletConfig config = getServletConfig();
-		request.setAttribute("loginNav", config.getInitParameter("loginNav"));
+		request.setAttribute("nav", config.getInitParameter("loginNav"));
 		request.getRequestDispatcher("loginPage").forward(request, response);
 	}
 	

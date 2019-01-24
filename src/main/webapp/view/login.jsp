@@ -11,24 +11,26 @@
 </head>
 <body>
 	<c:import url="view/header.jsp">
-		<c:param name="nav" value="${requestScope.loginNav}" />
+		<c:param name="nav" value="${requestScope.nav}" />
 	</c:import>
 	<main>
 	<article>
-		<fieldset>
-			<legend>Login</legend>
-			<div>
-				<label for="email" class="title">E-mail</label> <input
-					class="input-field" id="email" type="email" name="" required />
-			</div>
-			<div>
-				<label for="password" class="title">Password</label> <input
-					class="input-field" id="password" type="password" name="" required />
-			</div>
-			<div>
-				<input type="submit" id="submit" value="Login" />
-			</div>
-		</fieldset>
+		<form action="login" method="post">
+			<fieldset>
+				<legend>Login</legend>
+				<div>
+					<label for="email" class="title">E-mail</label> <input
+						class="input-field" id="email" type="email" name="email" required />
+				</div>
+				<div>
+					<label for="password" class="title">Password</label> <input
+						class="input-field" id="password" type="password" name="password" required />
+				</div>
+				<div>
+					<input type="submit" id="submit" value="Login" />
+				</div>
+			</fieldset>
+		</form>
 	</article>
 	</main>
 	<c:import url="view/footer.jsp" />

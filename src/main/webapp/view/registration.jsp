@@ -11,7 +11,7 @@
 </head>
 <body>
 	<c:import url="view/header.jsp">
-		<c:param name="nav" value="${requestScope.registrationNav}"></c:param>
+		<c:param name="nav" value="${requestScope.nav}"></c:param>
 	</c:import>
 	<main>
 	<article>
