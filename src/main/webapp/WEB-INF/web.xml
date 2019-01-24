@@ -47,11 +47,6 @@
     <url-pattern>/myContacts</url-pattern>
   </filter-mapping>
   <servlet>
-    <display-name>LoginRegisterController</display-name>
-    <servlet-name>LoginRegisterController</servlet-name>
-    <servlet-class>com.boris.controller.LoginRegisterController</servlet-class>
-  </servlet>
-  <servlet>
     <display-name>EditProfileController</display-name>
     <servlet-name>EditProfileController</servlet-name>
     <servlet-class>com.boris.controller.EditProfileController</servlet-class>
@@ -124,10 +119,6 @@
   <servlet-mapping>
     <servlet-name>index</servlet-name>
     <url-pattern>/index</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>LoginRegisterController</servlet-name>
-    <url-pattern>/loginRegister</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>EditProfileController</servlet-name>
