@@ -67,11 +67,6 @@
     <servlet-class>com.boris.controller.SearchContactsController</servlet-class>
   </servlet>
   <servlet>
-    <display-name>ContactDetailsController</display-name>
-    <servlet-name>ContactDetailsController</servlet-name>
-    <servlet-class>com.boris.controller.ContactDetailsController</servlet-class>
-  </servlet>
-  <servlet>
     <display-name>DeleteContactController</display-name>
     <servlet-name>DeleteContactController</servlet-name>
     <servlet-class>com.boris.controller.DeleteContactController</servlet-class>
@@ -101,6 +96,14 @@
   	<servlet-name>contactsJsp</servlet-name>
   	<jsp-file>/view/contacts.jsp</jsp-file>
   </servlet>
+  <servlet>
+  	<servlet-name>contactDetailsJsp</servlet-name>
+  	<jsp-file>/view/contactDetails.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>contactDetailsJsp</servlet-name>
+  	<url-pattern>/contactDetailsPage</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>contactsJsp</servlet-name>
   	<url-pattern>/contactsPage</url-pattern>
@@ -136,10 +139,6 @@
   <servlet-mapping>
     <servlet-name>SearchContactsController</servlet-name>
     <url-pattern>/searchContacts</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ContactDetailsController</servlet-name>
-    <url-pattern>/contactDetails</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>DeleteContactController</servlet-name>
