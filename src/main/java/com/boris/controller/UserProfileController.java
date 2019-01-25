@@ -30,7 +30,7 @@ public class UserProfileController extends HttpServlet {
 		request.setAttribute("nav", config.getInitParameter("profileNav"));
 		Integer userId = (Integer) request.getSession().getAttribute("userId");
 		User user = UserService.getUserInfo(userId);
-		request.setAttribute("user", user);
+		request.setAttribute("bean", user);
 		request.getRequestDispatcher("profilePage").forward(request, response);
 	}
 
