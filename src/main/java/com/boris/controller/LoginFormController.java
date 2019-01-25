@@ -40,7 +40,7 @@ public class LoginFormController extends HttpServlet {
 		
 		//if(userId != null) {
 			request.getSession().setAttribute("userId", userId);
-			response.sendRedirect("userProfile");
+			response.sendRedirect("profile");
 	//	}
 		
 //		else {
