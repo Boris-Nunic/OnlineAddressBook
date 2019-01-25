@@ -52,11 +52,6 @@
     <servlet-class>com.boris.controller.EditProfileController</servlet-class>
   </servlet>
   <servlet>
-    <display-name>LogoutController</display-name>
-    <servlet-name>LogoutController</servlet-name>
-    <servlet-class>com.boris.controller.LogoutController</servlet-class>
-  </servlet>
-  <servlet>
     <display-name>DeleteProfileController</display-name>
     <servlet-name>DeleteProfileController</servlet-name>
     <servlet-class>com.boris.controller.DeleteProfileController</servlet-class>
@@ -129,10 +124,6 @@
   <servlet-mapping>
     <servlet-name>EditProfileController</servlet-name>
     <url-pattern>/editProfile</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>LogoutController</servlet-name>
-    <url-pattern>/logout</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>DeleteProfileController</servlet-name>
