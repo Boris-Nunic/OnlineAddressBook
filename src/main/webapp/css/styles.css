@@ -61,7 +61,8 @@ figure{
 }
 
 main{
-	padding-top: 5%;
+	background-image: url("../img/book-background.jpg");
+	padding-top: 7%;
 	width: 100%;
 	min-height: 800px;
 	background-color: #f8f9e3;
@@ -177,7 +178,6 @@ th.last{
 	padding: 0;
 	width: 100%;
 	min-height: 450px;
-	background-image: url("../img/addressbook.jpg");
 }
 
 .main-screen-register{
@@ -228,7 +228,8 @@ aside{
 	background-color: #f8f9e3;
 }
 
-.user-info{
+.info{
+	min-width: 910px;
 	width: 50%;
 	border: 1px solid black;
 	margin: auto;
@@ -236,41 +237,34 @@ aside{
 	background-color: #e5e49c;
 }
 
-.user-info>figure{
+.info>figure{
 	width: 180px;
 	margin: auto;
 	padding: 10px;
 }
 
-.user-info>div{
-	width: 50%;
-	margin: auto;
-	margin-top: 2%;
-}
-
-.user-info>button{
+.info>button{
 	display: block;
 	margin: auto;
 	margin-bottom: 3%;
 }
-
-.profile-picture{
+.info>table{
+	width: 80%;
+	margin: auto;
+}
+.info-picture{
 	width: 180px;
 	height: 180px;
 }
 
-.user-info-title{
-	width: 48%;
+.info-title{
+	min-width: 200px;
 	text-align: right;
-	display: inline-block;
-	font-size:1.5em;
+	font-size:1.3em;
 }
 
-.user-info-value{
-	width: 48%;
-	display: inline-block;
-	font-size: 1.5em;
+.info-value{
+	min-width: 200px;
+	font-size: 1.3em;
 	font-weight: bold;
-	margin-left:2%;
-	border-bottom: 1px solid black;
 }

@@ -35,8 +35,8 @@
 					<td class="email"><c:out value="${contact.address.email}" /></td>
 					<td><c:out value="${contact.personalInfo.phoneNumber}" /></td>
 					<td>
-						<form>
-							<button>Details</button>
+						<form action="details" method="get">
+							<button name="contactId" value="${contact.id}">Details</button>
 						</form>
 					</td>
 					<td>

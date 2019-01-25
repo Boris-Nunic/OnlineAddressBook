@@ -16,7 +16,7 @@
 		<c:param name="nav" value="${requestScope.nav}"></c:param>
 	</c:import>
 
-	<main>
+	<main class="main-screen">
 	<article class="main-screen">
 		<div class="main-screen-register">
 			<p id="main-registration">
