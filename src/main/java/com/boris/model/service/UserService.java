@@ -81,14 +81,12 @@ public class UserService {
 	}
 	
 	//Edit profile logic
-	public static String editProfile(User user) {
-		String message = null;
+	public static boolean editProfile(User user) {
 		int rowsAffected = userDao.editUser(user);
 		if(rowsAffected !=1) {
-			message = "Something went wrong. Please try again";
-			return message;
+			return false;
 		}
-		return message;
+		return true;
 	}
 	
 	// Delete profile logic
