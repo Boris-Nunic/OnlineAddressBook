@@ -3,7 +3,9 @@ package com.boris.controller;
 import java.io.IOException;
 import java.sql.Date;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,14 +18,16 @@ import com.boris.model.service.UserService;
 /**
  * Servlet implementation class EditProfileController
  */
-@WebServlet(urlPatterns="/edit_profile")
+@WebServlet(urlPatterns="/edit_profile", initParams=@WebInitParam(name="editProfileNav", value="profile"))
 public class EditProfileController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		Integer userId = (Integer)request.getSession().getAttribute("userId");
 		User user = UserService.getUserInfo(userId);
+		request.setAttribute("nav", getServletConfig().getInitParameter("editProfileNav"));
 		request.setAttribute("bean", user);
 		request.getRequestDispatcher("editUserProfile").forward(request, response);
 	}

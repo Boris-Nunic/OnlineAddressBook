@@ -47,11 +47,6 @@
     <url-pattern>/myContacts</url-pattern>
   </filter-mapping>
   <servlet>
-    <display-name>EditProfileController</display-name>
-    <servlet-name>EditProfileController</servlet-name>
-    <servlet-class>com.boris.controller.EditProfileController</servlet-class>
-  </servlet>
-  <servlet>
     <display-name>DeleteProfileController</display-name>
     <servlet-name>DeleteProfileController</servlet-name>
     <servlet-class>com.boris.controller.DeleteProfileController</servlet-class>
@@ -100,6 +95,14 @@
   	<servlet-name>contactDetailsJsp</servlet-name>
   	<jsp-file>/view/contactDetails.jsp</jsp-file>
   </servlet>
+  <servlet>
+  	<servlet-name>editUserProfileJsp</servlet-name>
+  	<jsp-file>/view/editUserProfile.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>editUserProfileJsp</servlet-name>
+  	<url-pattern>/editUserProfile</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>contactDetailsJsp</servlet-name>
   	<url-pattern>/contactDetailsPage</url-pattern>
@@ -123,10 +126,6 @@
   <servlet-mapping>
     <servlet-name>indexJsp</servlet-name>
     <url-pattern>/index</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>EditProfileController</servlet-name>
-    <url-pattern>/editProfile</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>DeleteProfileController</servlet-name>
