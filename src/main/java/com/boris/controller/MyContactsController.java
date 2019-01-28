@@ -17,7 +17,7 @@ import com.boris.model.service.ContactService;
 /**
  * Servlet implementation class MyContactsController
  */
-@WebServlet(urlPatterns="/contacts", initParams=@WebInitParam(name="contactsNav", value="profile,logout"))
+@WebServlet(urlPatterns="/contacts", initParams=@WebInitParam(name="contactsNav", value="add,profile,logout"))
 public class MyContactsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

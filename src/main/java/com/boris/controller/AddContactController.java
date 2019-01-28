@@ -4,17 +4,19 @@ import java.io.IOException;
 import java.sql.Date;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.boris.model.entities.Contact;
-import com.boris.model.entities.User;
 import com.boris.model.service.ContactService;
 
 /**
  * Servlet implementation class AddContactController
  */
+@WebServlet(urlPatterns="/add", initParams=@WebInitParam(name="addContactNav", value="contacts,profile"))
 public class AddContactController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -22,9 +24,8 @@ public class AddContactController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String urlPattern = "addContact";
-		request.setAttribute("urlPattern", urlPattern);
-		request.getRequestDispatcher("addContact.jsp").forward(request, response);
+		request.setAttribute("nav", getServletConfig().getInitParameter("addContactNav"));
+		request.getRequestDispatcher("addContactPage").forward(request, response);
 	}
 
 	/**
@@ -60,7 +61,7 @@ public class AddContactController extends HttpServlet {
 		String addContactMessage = ContactService.addContact(contact, userId);
 		request.getSession().setAttribute("message", addContactMessage);
 		
-		response.sendRedirect("myContacts");
+		response.sendRedirect("contacts");
 		
 		
 	}

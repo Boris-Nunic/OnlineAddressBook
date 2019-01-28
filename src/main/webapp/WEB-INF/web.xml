@@ -99,6 +99,14 @@
   	<servlet-name>editUserProfileJsp</servlet-name>
   	<jsp-file>/view/editUserProfile.jsp</jsp-file>
   </servlet>
+  <servlet>
+  	<servlet-name>addContactJsp</servlet-name>
+  	<jsp-file>/view/addContact.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>addContactJsp</servlet-name>
+  	<url-pattern>/addContactPage</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>editUserProfileJsp</servlet-name>
   	<url-pattern>/editUserProfile</url-pattern>
