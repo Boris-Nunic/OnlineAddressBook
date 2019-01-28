@@ -16,7 +16,7 @@ import com.boris.model.service.UserService;
 /**
  * Servlet implementation class UserProfileController
  */
-@WebServlet(urlPatterns = "/profile", initParams = @WebInitParam(name = "profileNav", value = "contacts,edit,delete,logout"))
+@WebServlet(urlPatterns = "/profile", initParams = @WebInitParam(name = "profileNav", value = "contacts,edit_profile,delete,logout"))
 public class UserProfileController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

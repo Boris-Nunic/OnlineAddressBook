@@ -74,6 +74,7 @@ article{
 }
 
 fieldset{
+	background-color: #e5e49c;
 	width: 50%;
 	margin: auto;
 	border: 2px solid black;
@@ -85,7 +86,7 @@ legend{
 	border-radius: 5px;
 	padding: 1%;
 	font-size: 2em;
-	background-color: #e5e49c;
+	background-color: #c6c691;
 }
 fieldset>div{
 	width: 66%;
@@ -104,7 +105,7 @@ fieldset>div{
 }
 
 .input-field{
-	background-color: #f8f9e3;
+	background-color: #e5e49c;
 	width: 40%;
 	border: none;
 	border-bottom: 2px solid black;
