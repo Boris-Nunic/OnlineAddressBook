@@ -11,34 +11,34 @@ public class UserService {
 	private static UserDaoImpl userDao = new UserDaoImpl();
 
 	// Registration logic
-	public static String registration(String email, String password, String repeatPassword) {
+	public static int registration(String email, String password, String repeatPassword) {
 
-		String message = null;
+		int result;
 		String encryptedPassword = null;
 
 		if (!password.equals(repeatPassword)) {
-			message = "Password and reapeted password do not match. Please try again";
-			return message;
+			result = 3;
+			return result;
 		}
 
 		try {
 			encryptedPassword = EncryptionService.encryptPassword(password);
 		} catch (Exception e) {
-			message = "Something went wrong, please try again";
-			return message;
+			result = 1;
+			return result;
 		}
 
 		try {
 			User user = new User(email, encryptedPassword);
 			userDao.addUser(user);
-			message = "Your registration was successful. Please login to continue";
+			result = 0;
 
 		} catch (SQLIntegrityConstraintViolationException e) {
-			message = "Provided email adderss is already registered. Please enter anothor email address";
+			result = 2;
 		} catch (SQLException e) {
-			message = "Something went wrong. Please try again";
+			result = 1;
 		}
-		return message;
+		return result;
 	}
 
 	// Login logic
@@ -54,13 +54,11 @@ public class UserService {
 //			user.setMessage(message);
 //			return user;
 		}
-		
-		
-		
+
 		Integer userId = userDao.validateUser(email, encryptedPassword);
-		
+
 		return userId;
-		
+
 //		if(user == null) {
 //			user = new User();
 //			message = "Provided e-mail address or password is not valid";
@@ -79,27 +77,27 @@ public class UserService {
 //		user.setPassword(null);
 //		return user;
 	}
-	
-	//Edit profile logic
+
+	// Edit profile logic
 	public static boolean editProfile(User user) {
 		int rowsAffected = userDao.editUser(user);
-		if(rowsAffected !=1) {
+		if (rowsAffected != 1) {
 			return false;
 		}
 		return true;
 	}
-	
+
 	// Delete profile logic
 	public static String deleteProfile(Integer id) {
 		String message = null;
 		int rowsAffected = userDao.deleteUser(id);
-		if(rowsAffected !=1) {
+		if (rowsAffected != 1) {
 			message = "Somthing went wrong please try again";
 			return message;
 		}
 		return message;
 	}
-	
+
 	// Get user's info
 	public static User getUserInfo(Integer userId) {
 		User user = userDao.getUser(userId);
