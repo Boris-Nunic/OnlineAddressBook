@@ -35,6 +35,9 @@
 				<div>
 					<input type="submit" id="submit" value="Register" />
 				</div>
+				<div class="message">
+					<c:out value="${requestScope.regitstrationMessage}" />
+				</div>
 			</fieldset>
 		</form>
 	</article>
