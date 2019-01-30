@@ -52,11 +52,6 @@
     <servlet-class>com.boris.controller.DeleteProfileController</servlet-class>
   </servlet>
   <servlet>
-    <display-name>AddContactController</display-name>
-    <servlet-name>AddContactController</servlet-name>
-    <servlet-class>com.boris.controller.AddContactController</servlet-class>
-  </servlet>
-  <servlet>
     <display-name>SearchContactsController</display-name>
     <servlet-name>SearchContactsController</servlet-name>
     <servlet-class>com.boris.controller.SearchContactsController</servlet-class>
@@ -65,11 +60,6 @@
     <display-name>DeleteContactController</display-name>
     <servlet-name>DeleteContactController</servlet-name>
     <servlet-class>com.boris.controller.DeleteContactController</servlet-class>
-  </servlet>
-  <servlet>
-    <display-name>EditContactController</display-name>
-    <servlet-name>EditContactController</servlet-name>
-    <servlet-class>com.boris.controller.EditContactController</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>indexJsp</servlet-name>
@@ -103,6 +93,14 @@
   	<servlet-name>addContactJsp</servlet-name>
   	<jsp-file>/view/addContact.jsp</jsp-file>
   </servlet>
+  <servlet>
+  	<servlet-name>EditContactJsp</servlet-name>
+  	<jsp-file>/view/editContact.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>EditContactJsp</servlet-name>
+  	<url-pattern>/editContactPage</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>addContactJsp</servlet-name>
   	<url-pattern>/addContactPage</url-pattern>
@@ -140,19 +138,11 @@
     <url-pattern>/deleteProfile</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>AddContactController</servlet-name>
-    <url-pattern>/addContact</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
     <servlet-name>SearchContactsController</servlet-name>
     <url-pattern>/searchContacts</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>DeleteContactController</servlet-name>
     <url-pattern>/deleteContact</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>EditContactController</servlet-name>
-    <url-pattern>/editContact</url-pattern>
   </servlet-mapping>
 </web-app>

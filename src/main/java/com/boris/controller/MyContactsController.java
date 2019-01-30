@@ -17,7 +17,9 @@ import com.boris.model.service.ContactService;
 /**
  * Servlet implementation class MyContactsController
  */
-@WebServlet(urlPatterns="/contacts", initParams=@WebInitParam(name="contactsNav", value="add,profile,logout"))
+@WebServlet(urlPatterns = "/contacts", initParams = { @WebInitParam(name = "contactsNav", value = "add,profile,logout"),
+		@WebInitParam(name = "0", value = "Something went wrong please try again"),
+		@WebInitParam(name = "1", value = "Contact was eddited successfully") })
 public class MyContactsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -29,18 +31,12 @@ public class MyContactsController extends HttpServlet {
 			throws ServletException, IOException {
 		ServletConfig config = getServletConfig();
 		request.setAttribute("nav", config.getInitParameter("contactsNav"));
-		Integer userId = (Integer)request.getSession().getAttribute("userId");
+		Integer userId = (Integer) request.getSession().getAttribute("userId");
 		ArrayList<Contact> contacts = ContactService.getAllContacts(userId);
-		String message = (String)request.getSession().getAttribute("message");
-		request.getSession().removeAttribute("message");
-		request.setAttribute("message", message);
+		String messageNumber = "" + request.getSession().getAttribute("contatcEditStatus");
+		request.getSession().removeAttribute("contatcEditStatus");
+		request.setAttribute("message", getServletConfig().getInitParameter(messageNumber));
 		request.setAttribute("contacts", contacts);
 		request.getRequestDispatcher("contactsPage").forward(request, response);
 	}
-	
-//	@Override
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		doGet(request, response);
-//	}
-
 }

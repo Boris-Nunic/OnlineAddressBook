@@ -54,19 +54,19 @@ public class ContactService {
 		return message;
 	}
 	
-	public static String editContact(Contact contact) {
+	public static int editContact(Contact contact) {
 		
-		String message = null;
+		int result;
 		Integer rowsAffected = contactDao.editContact(contact);
 		
 		if(rowsAffected != 1) {
-			message ="Something went wrong please try again";
+			result =0;
 		}
 		
 		else {
-			message = "Contact was eddited successfully";
+			result = 1;
 		}
 		
-		return message;
+		return result;
 	}
 }
