@@ -35,7 +35,7 @@ public class UserAuthenticationFilter implements Filter {
 		if ( userId == null) {
 			String message = "The credentials are incorrect, please enter corrctrct credetials";
 			request.getSession().setAttribute("message", message);
-			response.sendRedirect("loginRegister");
+			response.sendRedirect("home");
 		}
 
 		else {

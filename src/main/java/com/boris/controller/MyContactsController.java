@@ -32,7 +32,14 @@ public class MyContactsController extends HttpServlet {
 		ServletConfig config = getServletConfig();
 		request.setAttribute("nav", config.getInitParameter("contactsNav"));
 		Integer userId = (Integer) request.getSession().getAttribute("userId");
-		ArrayList<Contact> contacts = ContactService.getAllContacts(userId);
+		String searchQuery = request.getParameter("searchQuery");
+		ArrayList<Contact> contacts = null;
+		if(searchQuery != null) {
+			 contacts = ContactService.searchContacts(searchQuery, userId);
+		} 
+		else {
+			contacts = ContactService.getAllContacts(userId);
+		}
 		String messageNumber = "" + request.getSession().getAttribute("contatcEditStatus");
 		request.getSession().removeAttribute("contatcEditStatus");
 		request.setAttribute("message", getServletConfig().getInitParameter(messageNumber));

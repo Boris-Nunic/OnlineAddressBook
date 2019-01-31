@@ -52,11 +52,6 @@
     <servlet-class>com.boris.controller.DeleteProfileController</servlet-class>
   </servlet>
   <servlet>
-    <display-name>SearchContactsController</display-name>
-    <servlet-name>SearchContactsController</servlet-name>
-    <servlet-class>com.boris.controller.SearchContactsController</servlet-class>
-  </servlet>
-  <servlet>
     <display-name>DeleteContactController</display-name>
     <servlet-name>DeleteContactController</servlet-name>
     <servlet-class>com.boris.controller.DeleteContactController</servlet-class>
@@ -136,10 +131,6 @@
   <servlet-mapping>
     <servlet-name>DeleteProfileController</servlet-name>
     <url-pattern>/deleteProfile</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>SearchContactsController</servlet-name>
-    <url-pattern>/searchContacts</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>DeleteContactController</servlet-name>

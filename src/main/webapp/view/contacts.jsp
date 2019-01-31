@@ -14,39 +14,45 @@
 		<c:param name="nav" value="${requestScope.nav}"></c:param>
 	</c:import>
 	<main>
-	<article>
-		<form class="search">
-			<input class="search-field" type="text" /> <input
+	<article class="contacts">
+		<form class="search" action="contacts" method="get">
+			<input class="search-field" type="text" name="searchQuery" /> <input
 				class="search-button" type="submit" value="Search" />
 		</form>
-		<table>
-			<tr class="head">
-				<th class="first" scope="col">#</th>
-				<th scope="col">Name</th>
-				<th scope="col">E-Mail</th>
-				<th scope="col">Phone Number</th>
-				<th class="last" scope="col" colspan="2">Options</th>
-			</tr>
-			<c:forEach items="${requestScope.contacts}" var="contact"
-				varStatus="loop">
-				<tr class="<c:if test="${loop.count % 2 == 0 }">even</c:if>">
-					<td class="number"><c:out value="${loop.count}" /></td>
-					<td><c:out value="${contact.personalInfo.firstName}" /></td>
-					<td class="email"><c:out value="${contact.address.email}" /></td>
-					<td><c:out value="${contact.personalInfo.phoneNumber}" /></td>
-					<td>
-						<form action="details" method="get">
-							<button name="contactId" value="${contact.id}">Details</button>
-						</form>
-					</td>
-					<td>
-						<form>
-							<button>Delete</button>
-						</form>
-					</td>
+		<div>
+
+			<table>
+				<tr class="head">
+					<th class="first" scope="col">#</th>
+					<th scope="col">Name</th>
+					<th scope="col">E-Mail</th>
+					<th scope="col">Phone Number</th>
+					<th class="last" scope="col" colspan="2">Options</th>
 				</tr>
-			</c:forEach>
-		</table>
+				<c:forEach items="${requestScope.contacts}" var="contact"
+					varStatus="loop">
+					<tr class="<c:if test="${loop.count % 2 == 0 }">even</c:if>">
+						<td class="number"><c:out value="${loop.count}" /></td>
+						<td><c:out value="${contact.personalInfo.firstName}" /></td>
+						<td class="email"><c:out value="${contact.address.email}" /></td>
+						<td><c:out value="${contact.personalInfo.phoneNumber}" /></td>
+						<td>
+							<form action="details" method="get">
+								<button name="contactId" value="${contact.id}">Details</button>
+							</form>
+						</td>
+						<td>
+							<form>
+								<button>Delete</button>
+							</form>
+						</td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+		<div class="message">
+			<c:out value="" />
+		</div>
 	</article>
 	</main>
 	<c:import url="view/footer.jsp"></c:import>
