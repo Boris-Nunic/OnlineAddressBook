@@ -16,7 +16,7 @@
 	</c:import>
 	<main>
 		<c:import url="view/information.jsp">
-			<c:param name="info" value="${requestScope.user}"></c:param>
+			<c:param name="deleteButton" value="${requestScope.deleteButton}"></c:param>
 		</c:import>
 	</main>
 	<c:import url="view/footer.jsp">
