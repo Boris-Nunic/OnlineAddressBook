@@ -5,29 +5,6 @@
     <welcome-file>home</welcome-file>
   </welcome-file-list>
  
-  <filter>
-    <display-name>CachingFilter</display-name>
-    <filter-name>CachingFilter</filter-name>
-    <filter-class>com.boris.filters.CachingFilter</filter-class>
-  </filter>
- <filter-mapping>
-    <filter-name>CachingFilter</filter-name>
-    <url-pattern>/login</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-    <filter-name>CachingFilter</filter-name>
-    <url-pattern>/userProfile</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-    <filter-name>CachingFilter</filter-name>
-    <url-pattern>/myContacts</url-pattern>
-  </filter-mapping>
- 
-  <servlet>
-    <display-name>DeleteContactController</display-name>
-    <servlet-name>DeleteContactController</servlet-name>
-    <servlet-class>com.boris.controller.DeleteContactController</servlet-class>
-  </servlet>
   <servlet>
     <servlet-name>indexJsp</servlet-name>
     <jsp-file>/view/index.jsp</jsp-file>
@@ -107,9 +84,5 @@
   <servlet-mapping>
     <servlet-name>indexJsp</servlet-name>
     <url-pattern>/index</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>DeleteContactController</servlet-name>
-    <url-pattern>/deleteContact</url-pattern>
   </servlet-mapping>
 </web-app>
