@@ -14,7 +14,7 @@
 	<main>
 	<article class="display">
 		<div class="message">
-			${requestScope.negativeAnswer}
+			Are you sure?
 			<form action="${requestScope.positiveAnswer}"
 				method="post">
 				<button>Yes</button>
