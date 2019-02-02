@@ -40,11 +40,11 @@
 								<button name="contactId" value="${contact.id}">Details</button>
 							</form>
 						</td>
-						<td>
-							<form>
-								<button>Delete</button>
-							</form>
-						</td>
+<!-- 						<td> -->
+<!-- 							<form> -->
+<!-- 								<button>Delete</button> -->
+<!-- 							</form> -->
+<!-- 						</td> -->
 					</tr>
 				</c:forEach>
 			</table>

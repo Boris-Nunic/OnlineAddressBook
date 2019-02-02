@@ -39,19 +39,19 @@ public class ContactService {
 		return contact;
 	}
 	
-	public static String removeContact(String contactId) {
-		String message = null;
-		Integer rowsAffected = contactDao.removeContact(Integer.parseInt(contactId));
+	public static int removeContact(Integer contactId) {
+		int result;
+		Integer rowsAffected = contactDao.removeContact(contactId);
 		
 		if(rowsAffected != 1) {
-			message = "Something went wrong, please try again";
+			result = 0;
 		}
 		
 		else {
-			message = "Contact removed successfully";
+			result = 1;
 		}
 		
-		return message;
+		return result;
 	}
 	
 	public static int editContact(Contact contact) {
