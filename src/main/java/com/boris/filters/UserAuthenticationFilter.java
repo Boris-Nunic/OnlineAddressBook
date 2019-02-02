@@ -6,14 +6,15 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.boris.model.entities.User;
 
 /**
  * Servlet Filter implementation class UserAutenticationFilter
  */
+@WebFilter(urlPatterns = { "/profile", "/contacts", "/edit_profile", "/edit_contact", "/delte_profile",
+		"/delete_contact", "/details", "/add"})
 public class UserAuthenticationFilter implements Filter {
 
 	/**
@@ -23,7 +24,6 @@ public class UserAuthenticationFilter implements Filter {
 		// TODO Auto-generated constructor stub
 	}
 
-
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
@@ -32,10 +32,10 @@ public class UserAuthenticationFilter implements Filter {
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
 		Integer userId = (Integer) request.getSession().getAttribute("userId");
-		if ( userId == null) {
+		if (userId == null) {
 			String message = "The credentials are incorrect, please enter corrctrct credetials";
 			request.getSession().setAttribute("message", message);
-			response.sendRedirect("loginRegister");
+			response.sendRedirect("login");
 		}
 
 		else {

@@ -16,7 +16,9 @@ import com.boris.model.service.UserService;
 /**
  * Servlet implementation class UserProfileController
  */
-@WebServlet(urlPatterns = "/profile", initParams = @WebInitParam(name = "profileNav", value = "contacts,edit,delete,logout"))
+@WebServlet(urlPatterns = "/profile", initParams = {
+		@WebInitParam(name = "profileNav", value = "contacts,edit_profile,logout"),
+		@WebInitParam(name = "deleteProfile", value = "delete_profile") })
 public class UserProfileController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -28,9 +30,10 @@ public class UserProfileController extends HttpServlet {
 			throws ServletException, IOException {
 		ServletConfig config = getServletConfig();
 		request.setAttribute("nav", config.getInitParameter("profileNav"));
+		request.setAttribute("deleteButton", config.getInitParameter("deleteProfile"));
 		Integer userId = (Integer) request.getSession().getAttribute("userId");
 		User user = UserService.getUserInfo(userId);
-		request.setAttribute("user", user);
+		request.setAttribute("bean", user);
 		request.getRequestDispatcher("profilePage").forward(request, response);
 	}
 

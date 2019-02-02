@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="my" uri="com.boris.my.functions"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -16,13 +16,13 @@
 		<c:param name="nav" value="${requestScope.nav}"></c:param>
 	</c:import>
 
-	<main>
+	<main class="main-screen">
 	<article class="main-screen">
 		<div class="main-screen-register">
 			<p id="main-registration">
 				Simple online adress book.<br />Join here for free!
 			</p>
-			<form>
+			<form action="register" method="get">
 				<input id="main-registration-button" type="submit" value="Register">
 			</form>
 		</div>

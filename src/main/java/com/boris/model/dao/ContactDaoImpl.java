@@ -121,8 +121,7 @@ public class ContactDaoImpl implements ContactDaoInterface {
 	@Override
 	public List<Contact> searchContacts(String searchQuery, Integer userId) {
 
-		String SqlQuery = "SELECT *  FROM contacts WHERE (first_name LIKE '%" + searchQuery + "%' OR surname LIKE '%"
-				+ searchQuery + "%') AND user_id = ? ORDER BY first_name";
+		String SqlQuery = "SELECT *  FROM online_address_book.contacts WHERE first_name LIKE '%" + searchQuery + "%' AND user_id = ? ORDER BY first_name";
 
 		Contact contact = null;
 		List<Contact> contacts = null;
