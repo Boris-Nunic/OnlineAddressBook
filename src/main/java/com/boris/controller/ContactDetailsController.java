@@ -16,7 +16,9 @@ import com.boris.model.service.ContactService;
 /**
  * Servlet implementation class ContactDetailsController
  */
-@WebServlet(urlPatterns = "/details", initParams = @WebInitParam(name = "contactDetailsNav", value = "edit_contact,delete,contacts,profile"))
+@WebServlet(urlPatterns = "/details", initParams = {
+		@WebInitParam(name = "contactDetailsNav", value = "edit_contact,profile"),
+		@WebInitParam(name = "deleteProfile", value = "delete_contact")})
 public class ContactDetailsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -27,11 +29,12 @@ public class ContactDetailsController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ServletConfig config = getServletConfig();
-		request.setAttribute("nav", config.getInitParameter("contactDetailsNav"));
 		Integer contactId = Integer.parseInt(request.getParameter("contactId"));
 		Integer userId = (Integer) request.getSession().getAttribute("userId");
 		Contact contact = ContactService.getContact(contactId, userId);
 		request.getSession().setAttribute("contactId", contactId);
+		request.setAttribute("nav", config.getInitParameter("contactDetailsNav"));
+		request.setAttribute("deleteButton", config.getInitParameter("deleteProfile"));
 		request.setAttribute("bean", contact);
 		request.getRequestDispatcher("contactDetailsPage").forward(request, response);
 	}

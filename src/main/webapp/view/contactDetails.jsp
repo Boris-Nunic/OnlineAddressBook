@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +10,11 @@
 </head>
 <body>
 	<c:import url="view/header.jsp">
-		<c:param name="nav" value="${requestScope.nav}"/>
+		<c:param name="nav" value="${requestScope.nav}" />
 	</c:import>
-	<main>
-	<c:import url="view/information.jsp" />
-	</main>
+	<main> <c:import url="view/information.jsp">
+		<c:param name="deleteButton" value="${requestScope.deleteButton}"></c:param>
+	</c:import> </main>
 	<c:import url="view/footer.jsp" />
 
 </body>
