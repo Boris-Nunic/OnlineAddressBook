@@ -22,7 +22,7 @@
 			<p id="main-registration">
 				Simple online adress book.<br />Join here for free!
 			</p>
-			<form>
+			<form action="register" method="get">
 				<input id="main-registration-button" type="submit" value="Register">
 			</form>
 		</div>

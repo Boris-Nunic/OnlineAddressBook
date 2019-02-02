@@ -5,7 +5,7 @@ body {
 }
 
 header {
-	position: fixed;
+/* 	position: fixed; */
 	width: 98%;
 	overflow: auto;
 	padding: 1% 1%;
@@ -290,4 +290,13 @@ aside {
 .contacts>div {
 	max-height: 640px;
 	overflow: auto;
+}
+
+.display{
+	padding: 2%;
+	min-width: 910px;
+	width: 50%;
+	margin: auto;
+	background-color: #e5e49c;
+	border-radius: 100px;
 }

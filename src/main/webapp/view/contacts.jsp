@@ -20,7 +20,6 @@
 				class="search-button" type="submit" value="Search" />
 		</form>
 		<div>
-
 			<table>
 				<tr class="head">
 					<th class="first" scope="col">#</th>
