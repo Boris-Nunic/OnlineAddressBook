@@ -88,14 +88,14 @@ public class UserService {
 	}
 
 	// Delete profile logic
-	public static String deleteProfile(Integer id) {
-		String message = null;
+	public static int deleteProfile(Integer id) {
+		int result = 1;
 		int rowsAffected = userDao.deleteUser(id);
 		if (rowsAffected != 1) {
-			message = "Somthing went wrong please try again";
-			return message;
+			result = 0;
+			return result;
 		}
-		return message;
+		return result;
 	}
 
 	// Get user's info

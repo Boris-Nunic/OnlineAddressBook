@@ -47,11 +47,6 @@
     <url-pattern>/myContacts</url-pattern>
   </filter-mapping>
   <servlet>
-    <display-name>DeleteProfileController</display-name>
-    <servlet-name>DeleteProfileController</servlet-name>
-    <servlet-class>com.boris.controller.DeleteProfileController</servlet-class>
-  </servlet>
-  <servlet>
     <display-name>DeleteContactController</display-name>
     <servlet-name>DeleteContactController</servlet-name>
     <servlet-class>com.boris.controller.DeleteContactController</servlet-class>
@@ -61,76 +56,80 @@
     <jsp-file>/view/index.jsp</jsp-file>
   </servlet>
   <servlet>
-  	<servlet-name>loginJsp</servlet-name>
-  	<jsp-file>/view/login.jsp</jsp-file>
+    <servlet-name>loginJsp</servlet-name>
+    <jsp-file>/view/login.jsp</jsp-file>
   </servlet>
   <servlet>
-  	<servlet-name>registrationJsp</servlet-name>
-  	<jsp-file>/view/registration.jsp</jsp-file>
+    <servlet-name>registrationJsp</servlet-name>
+    <jsp-file>/view/registration.jsp</jsp-file>
   </servlet>
   <servlet>
-  	<servlet-name>profilePageJsp</servlet-name>
-  	<jsp-file>/view/profilePage.jsp</jsp-file>
+    <servlet-name>profilePageJsp</servlet-name>
+    <jsp-file>/view/profilePage.jsp</jsp-file>
   </servlet>
   <servlet>
-  	<servlet-name>contactsJsp</servlet-name>
-  	<jsp-file>/view/contacts.jsp</jsp-file>
+    <servlet-name>contactsJsp</servlet-name>
+    <jsp-file>/view/contacts.jsp</jsp-file>
   </servlet>
   <servlet>
-  	<servlet-name>contactDetailsJsp</servlet-name>
-  	<jsp-file>/view/contactDetails.jsp</jsp-file>
+    <servlet-name>contactDetailsJsp</servlet-name>
+    <jsp-file>/view/contactDetails.jsp</jsp-file>
   </servlet>
   <servlet>
-  	<servlet-name>editUserProfileJsp</servlet-name>
-  	<jsp-file>/view/editUserProfile.jsp</jsp-file>
+    <servlet-name>editUserProfileJsp</servlet-name>
+    <jsp-file>/view/editUserProfile.jsp</jsp-file>
   </servlet>
   <servlet>
-  	<servlet-name>addContactJsp</servlet-name>
-  	<jsp-file>/view/addContact.jsp</jsp-file>
+    <servlet-name>addContactJsp</servlet-name>
+    <jsp-file>/view/addContact.jsp</jsp-file>
   </servlet>
   <servlet>
-  	<servlet-name>EditContactJsp</servlet-name>
-  	<jsp-file>/view/editContact.jsp</jsp-file>
+    <servlet-name>editContactJsp</servlet-name>
+    <jsp-file>/view/editContact.jsp</jsp-file>
+  </servlet>
+  <servlet>
+  	<servlet-name>validateDeleteJsp</servlet-name>
+  	<jsp-file>/view/validateDelete.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>EditContactJsp</servlet-name>
-  	<url-pattern>/editContactPage</url-pattern>
+  	<servlet-name>validateDeleteJsp</servlet-name>
+  	<url-pattern>/validateDeletePage</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>addContactJsp</servlet-name>
-  	<url-pattern>/addContactPage</url-pattern>
+    <servlet-name>editContactJsp</servlet-name>
+    <url-pattern>/editContactPage</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>editUserProfileJsp</servlet-name>
-  	<url-pattern>/editUserProfile</url-pattern>
+    <servlet-name>addContactJsp</servlet-name>
+    <url-pattern>/addContactPage</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>contactDetailsJsp</servlet-name>
-  	<url-pattern>/contactDetailsPage</url-pattern>
+    <servlet-name>editUserProfileJsp</servlet-name>
+    <url-pattern>/editUserProfile</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>contactsJsp</servlet-name>
-  	<url-pattern>/contactsPage</url-pattern>
-  </servlet-mapping>
-   <servlet-mapping>
-  	<servlet-name>profilePageJsp</servlet-name>
-  	<url-pattern>/profilePage</url-pattern>
+    <servlet-name>contactDetailsJsp</servlet-name>
+    <url-pattern>/contactDetailsPage</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>registrationJsp</servlet-name>
-  	<url-pattern>/registrationPage</url-pattern>
+    <servlet-name>contactsJsp</servlet-name>
+    <url-pattern>/contactsPage</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>loginJsp</servlet-name>
-  	<url-pattern>/loginPage</url-pattern>
+    <servlet-name>profilePageJsp</servlet-name>
+    <url-pattern>/profilePage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>registrationJsp</servlet-name>
+    <url-pattern>/registrationPage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>loginJsp</servlet-name>
+    <url-pattern>/loginPage</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>indexJsp</servlet-name>
     <url-pattern>/index</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>DeleteProfileController</servlet-name>
-    <url-pattern>/deleteProfile</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>DeleteContactController</servlet-name>
