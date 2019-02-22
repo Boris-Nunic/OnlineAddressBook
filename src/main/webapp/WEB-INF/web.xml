@@ -1,7 +1,88 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
-<web-app>
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
   <display-name>Archetype Created Web Application</display-name>
+  <welcome-file-list>
+    <welcome-file>home</welcome-file>
+  </welcome-file-list>
+ 
+  <servlet>
+    <servlet-name>indexJsp</servlet-name>
+    <jsp-file>/view/index.jsp</jsp-file>
+  </servlet>
+  <servlet>
+    <servlet-name>loginJsp</servlet-name>
+    <jsp-file>/view/login.jsp</jsp-file>
+  </servlet>
+  <servlet>
+    <servlet-name>registrationJsp</servlet-name>
+    <jsp-file>/view/registration.jsp</jsp-file>
+  </servlet>
+  <servlet>
+    <servlet-name>profilePageJsp</servlet-name>
+    <jsp-file>/view/profilePage.jsp</jsp-file>
+  </servlet>
+  <servlet>
+    <servlet-name>contactsJsp</servlet-name>
+    <jsp-file>/view/contacts.jsp</jsp-file>
+  </servlet>
+  <servlet>
+    <servlet-name>contactDetailsJsp</servlet-name>
+    <jsp-file>/view/contactDetails.jsp</jsp-file>
+  </servlet>
+  <servlet>
+    <servlet-name>editUserProfileJsp</servlet-name>
+    <jsp-file>/view/editUserProfile.jsp</jsp-file>
+  </servlet>
+  <servlet>
+    <servlet-name>addContactJsp</servlet-name>
+    <jsp-file>/view/addContact.jsp</jsp-file>
+  </servlet>
+  <servlet>
+    <servlet-name>editContactJsp</servlet-name>
+    <jsp-file>/view/editContact.jsp</jsp-file>
+  </servlet>
+  <servlet>
+  	<servlet-name>validateDeleteJsp</servlet-name>
+  	<jsp-file>/view/validateDelete.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>validateDeleteJsp</servlet-name>
+  	<url-pattern>/validateDeletePage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>editContactJsp</servlet-name>
+    <url-pattern>/editContactPage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>addContactJsp</servlet-name>
+    <url-pattern>/addContactPage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>editUserProfileJsp</servlet-name>
+    <url-pattern>/editUserProfile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>contactDetailsJsp</servlet-name>
+    <url-pattern>/contactDetailsPage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>contactsJsp</servlet-name>
+    <url-pattern>/contactsPage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>profilePageJsp</servlet-name>
+    <url-pattern>/profilePage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>registrationJsp</servlet-name>
+    <url-pattern>/registrationPage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>loginJsp</servlet-name>
+    <url-pattern>/loginPage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>indexJsp</servlet-name>
+    <url-pattern>/index</url-pattern>
+  </servlet-mapping>
 </web-app>
